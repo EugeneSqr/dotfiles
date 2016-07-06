@@ -84,7 +84,7 @@ let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
 let g:airline_detect_modified = 0
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
-set laststatus=2
+set laststatus=3
 
 " Functions
 fu! IsCurrentBufferEmpty()

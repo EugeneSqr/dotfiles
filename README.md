@@ -1,7 +1,7 @@
 dotfiles
 ========
 
-##Prerequisites
+## Prerequisites
 Install all of these using your OS's package manager
 
 * git
@@ -9,10 +9,10 @@ Install all of these using your OS's package manager
 * vifm
 * mutt
 
-##Setting up the environment
+## Setting up the environment
 Run setup.sh
 
-##Setting up yandex disk (optional)
+## Setting up yandex disk (optional)
 1. Install davfs2
 
 * debian based distros can use apt-get

@@ -6,7 +6,6 @@ Install all of these using your OS's package manager
 
 * git
 * vim
-* vifm
 * mutt
 
 ## Setting up the environment

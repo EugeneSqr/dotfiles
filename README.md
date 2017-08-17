@@ -16,3 +16,6 @@ Run setup.sh
 mkdir /home/$USER/.backup
 crontab -e
 @reboot bash /home/<username>/bin/dotfiles/backup.sh
+
+## Exclude lock files from syncing (inside dropbox folder)
+dropbox exclude add *.lock

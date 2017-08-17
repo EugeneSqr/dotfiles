@@ -25,7 +25,7 @@ set sort_aux = "reverse-last-date-received"
 set auto_tag = yes
 
 # Aliases
-set alias_file = ~/yandex.disk/mutt_aliases
+set alias_file = ~/Dropbox/mutt_aliases
 source $alias_file
 
 # Sidebar

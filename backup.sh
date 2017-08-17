@@ -1,6 +1,6 @@
 #!/bin/bash
 # What to backup. 
-backup_files="/home/$USER/yandex.disk"
+backup_files="/home/$USER/Dropbox"
 
 # Where to backup to.
 dest="/home/$USER/.backup"

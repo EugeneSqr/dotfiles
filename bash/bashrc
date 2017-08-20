@@ -30,7 +30,10 @@ alias clr="clear"
 alias ls="ls --color"
 alias la="ls -la"
 alias lt="tree"
+
 alias gst="git status --short"
+alias dst="cd $HOME/Dropbox; dropbox filestatus; cd -"
+
 alias dwn="cd $HOME/Downloads"
 alias dot="cd $HOME/bin/dotfiles"
 alias site="cd $HOME/bin/site"

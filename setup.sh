@@ -108,3 +108,8 @@ if [ $should_setup_mutt = y ]; then
 else
     pass "setting up mutt (skipped)"
 fi
+
+progress "setup dropbox scripts"
+wget -q "https://www.dropbox.com/download?dl=packages/dropbox.py" -O ~/bin/dropbox
+chmod +x ~/bin/dropbox
+pass "setup dropbox scripts"

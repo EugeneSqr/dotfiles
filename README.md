@@ -17,5 +17,8 @@ mkdir /home/$USER/.backup
 crontab -e
 @reboot bash /home/<username>/bin/dotfiles/backup.sh
 
-## Exclude lock files from syncing (inside dropbox folder)
+## Setup dropbox
+Some linux distributions can't handle dropbox autolaunch properly
+Here is how it can be done: https://github.com/joeroback/dropbox
+
 dropbox exclude add *.lock

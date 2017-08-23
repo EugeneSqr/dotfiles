@@ -7,6 +7,8 @@ Install all of these using your OS's package manager
 * git
 * vim
 * mutt
+* terminator
+* wmctrl
 * dropbox
 
 ## Setting up the environment

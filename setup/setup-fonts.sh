@@ -1,6 +1,4 @@
 #!/bin/bash
-source ./setup-utility.sh
-
 progress "setup powerline fonts"
 fontDir=~/.local/share/fonts
 fontName=PowerlineSymbols.otf

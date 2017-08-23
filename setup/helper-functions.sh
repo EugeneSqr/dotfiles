@@ -12,7 +12,7 @@ function pass {
 
 function fail {
     echo -en "\033[2K"
-    echo -e "\r${NC}[${FAIL}fail${NC}] $1"
+    echo -e "\r${NC}[${FAIL}fail${NC}] $1 $2"
 }
 
 
@@ -27,8 +27,8 @@ function progress {
 }
 
 
-# appends line of text to file (if it's not already there)
-# if file not found, creates it
+# appends line of text to the specified file (if it's not already there)
+# if the file not found, creates it
 function appendLine {
     if [ ! -f $1 ]; then
         progress "$1 not found"
@@ -41,4 +41,10 @@ function appendLine {
     else
         echo $2 >> $1
     fi
+}
+
+
+# check if specified programm is installed
+function isInstalled {
+    ! whereis "$1" | grep "^$1:$" > /dev/null
 }

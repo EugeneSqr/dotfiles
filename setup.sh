@@ -5,4 +5,5 @@
 . ./setup/setup-fonts.sh
 . ./setup/setup-git.sh
 . ./setup/setup-mutt.sh
+. ./setup/setup-terminator.sh
 . ./setup/setup-dropbox.sh

@@ -12,7 +12,7 @@ function pass {
 
 function fail {
     echo -en "\033[2K"
-    echo -e "\r${NC}[${FAIL}fail${NC}] $1 $2"
+    echo -e "\r${NC}[${FAIL}fail${NC}] $1"
 }
 
 

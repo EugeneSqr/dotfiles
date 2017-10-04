@@ -73,6 +73,10 @@ nnoremap <C-h> :bprevious<CR>
 nnoremap <C-l> :bnext<CR>
 nnoremap <C-n> :buffers<CR>:buffer<Space>
 
+"quickfix
+nnoremap <C-j> :cn<CR>
+nnoremap <C-k> :cp<CR>
+
 " Backspace fix
 set backspace=indent,eol,start
 

@@ -36,6 +36,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" max line length indication according to PEP8
+set colorcolumn=79
+
 " swap files
 set noswapfile 
 

@@ -38,6 +38,7 @@ set expandtab
 
 " max line length indication according to PEP8
 set colorcolumn=79
+set cursorline
 
 " swap files
 set noswapfile 

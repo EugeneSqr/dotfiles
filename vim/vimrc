@@ -70,14 +70,14 @@ nnoremap <C-s> :w<CR>
 inoremap <C-[> <nop>
 
 " remove current buffer without closing window
-nnoremap <C-c> :bp\|bd #<CR>
+nnoremap <C-q> :bp\|bd #<CR>
 
 " buffers
 nnoremap <C-h> :bprevious<CR>
 nnoremap <C-l> :bnext<CR>
 nnoremap <C-n> :buffers<CR>:buffer<Space>
 
-"quickfix
+" quickfix
 nnoremap <C-j> :cn<CR>
 nnoremap <C-k> :cp<CR>
 

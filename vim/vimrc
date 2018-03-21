@@ -83,6 +83,8 @@ nnoremap <C-k> :cp<CR>
 
 " Backspace fix
 set backspace=indent,eol,start
+" Use ctrl+j in insert mode to simulate del behavior
+inoremap <C-j> <C-o>x
 
 " folding
 set foldmethod=manual

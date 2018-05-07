@@ -13,6 +13,7 @@ Plugin 'tomasr/molokai'
 Plugin 'elzr/vim-json'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 call vundle#end()
 filetype plugin indent on     " required!
 
@@ -28,7 +29,7 @@ syntax enable
 colorscheme molokai
 
 " Line numbers
-set number 
+set number relativenumber
 
 " indentation all
 set smartindent

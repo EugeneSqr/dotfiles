@@ -19,7 +19,7 @@ date
 echo
 
 # Backup the files using tar.
-tar czf $dest/$archive_file $backup_files
+tar --exclude $backup_files/public -czf $dest/$archive_file $backup_files
 
 # Print end status message.
 echo

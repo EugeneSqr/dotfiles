@@ -14,7 +14,6 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'tpope/vim-surround'
-Plugin 'zhou13/vim-easyescape'
 Plugin 'aserebryakov/vim-todo-lists'
 call vundle#end()
 filetype plugin indent on     " required!

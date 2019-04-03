@@ -107,3 +107,8 @@ set laststatus=2
 
 " vim-json
 let g:vim_json_syntax_conceal = 0
+
+" run commands silently (returns back to vim right after command completion)
+" usage example with binding :Silent !ls
+" nnoremap <leader>vv :Silent :grep -ir <cword> ./<CR>:cw<CR>
+command! -nargs=+ Silent execute 'silent <args>' | redraw!

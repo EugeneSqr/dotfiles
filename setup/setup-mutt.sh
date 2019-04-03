@@ -16,7 +16,7 @@ if [ $should_setup_mutt = y ]; then
         fi
 
         appendLine $muttconfig "source ~/bin/dotfiles/mutt/muttrc"
-        appendLine $muttconfig "source ~/bin/dotfiles/mutt/molokai.muttrc"
+        appendLine $muttconfig "source ~/bin/dotfiles/mutt/colorscheme.muttrc"
 
         #setting up personal data
         progress "Enter google account: "

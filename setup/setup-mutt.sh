@@ -14,7 +14,6 @@ if [ $should_setup_mutt = y ]; then
         if [ ! -f $muttconfig ]; then
             touch $muttconfig
         fi
-
         appendLine $muttconfig "source ~/bin/dotfiles/mutt/muttrc"
         appendLine $muttconfig "source ~/bin/dotfiles/mutt/colorscheme.muttrc"
 
@@ -23,7 +22,7 @@ if [ $should_setup_mutt = y ]; then
         read google_account                         #e.g. google@gmail.com
         google_account_name=${google_account%@*}    #e.g. google
         appendLine $muttconfig "set imap_user = \"$google_account\""
-        progress "Enter gmail password (don't confuse with google password!): "
+        progress "Enter google mail app password (don't confuse with google password!): "
         read gmail_password
         appendLine $muttconfig "set imap_pass = \"$gmail_password\""
         appendLine $muttconfig "set smtp_url = \"smtp://$google_account_name@smtp.gmail.com:587/\""
@@ -32,10 +31,13 @@ if [ $should_setup_mutt = y ]; then
         appendLine $muttconfig "set realname = \"Eugene Skurikhin\""
 
 
-        mailcap=~/.mailcap
-        touch $mailcap
-        appendLine $mailcap "application/rtf; okular %s;"
-        appendLine $mailcap "application/pdf; okular %s;"
+        mailcap=~/.mutt/mailcap
+        if [ ! -f $mailcap ]; then
+            touch $mailcap
+            appendLine $mailcap "text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -dump %s; nametemplate=%s.html; copiousoutput"
+            appendLine $mailcap "application/rtf; okular %s;"
+            appendLine $mailcap "application/pdf; okular %s;"
+        fi
 
         pass "setting up mutt"
     else

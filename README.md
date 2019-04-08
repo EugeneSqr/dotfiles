@@ -7,6 +7,7 @@ Install all of these using your OS's package manager
 * git
 * vim
 * mutt
+* lynx
 * terminator
 * wmctrl
 * dropbox

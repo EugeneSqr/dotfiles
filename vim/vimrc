@@ -77,6 +77,7 @@ nnoremap <C-q> :bp\|bd #<CR>
 nnoremap <C-h> :bprevious<CR>
 nnoremap <C-l> :bnext<CR>
 nnoremap <C-n> :buffers<CR>:buffer<Space>
+set hidden "preserve syntax highlighting when switching buffers
 
 " quickfix
 nnoremap <C-j> :cn<CR>

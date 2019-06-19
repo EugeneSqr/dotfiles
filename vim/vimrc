@@ -6,15 +6,14 @@ set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'groenewege/vim-less'
 Plugin 'bling/vim-airline'
 Plugin 'tomasr/molokai'
 Plugin 'elzr/vim-json'
+Plugin 'groenewege/vim-less'
 Plugin 'jelera/vim-javascript-syntax'
-Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'tomtom/tcomment_vim'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'tpope/vim-surround'
-Plugin 'tomtom/tcomment_vim'
 Plugin 'tbknl/vimproject'
 call vundle#end()
 filetype plugin indent on     " required!

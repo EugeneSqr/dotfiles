@@ -32,6 +32,7 @@ alias la="ls -la"
 alias lt="tree"
 
 alias gst="git status --short"
+alias gl="git log --abbrev-commit"
 
 alias dwn="cd $HOME/Downloads"
 alias dot="cd $HOME/bin/dotfiles"

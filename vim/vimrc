@@ -65,9 +65,9 @@ set wildmenu
 nnoremap <F5> :setlocal spell! spelllang=en_us<CR>
 nnoremap <F6> :setlocal spell! spelllang=ru_ru<CR>
 
-" ctrl+s as save
-inoremap <C-s> <Esc>:w<CR>
-nnoremap <C-s> :w<CR>
+" ctrl+s as save all
+inoremap <C-s> <Esc>:wa<CR>
+nnoremap <C-s> :wa<CR>
 
 " remove current buffer without closing window
 nnoremap <C-q> :bp\|bd #<CR>

@@ -45,7 +45,10 @@ set cursorline
 " swap files and autosave
 set noswapfile 
 autocmd CursorHold,CursorHoldI * update
-set updatetime=500
+set updatetime=300
+" faster shift+O recognition in insert mode
+" arrow keys can no be used in insert mode however
+set noesckeys
 
 " file types 
 autocmd FileType make setlocal noexpandtab
@@ -67,10 +70,6 @@ set wildmenu
 nnoremap <F5> :setlocal spell! spelllang=en_us<CR>
 nnoremap <F6> :setlocal spell! spelllang=ru_ru<CR>
 
-" ctrl+s as save all
-inoremap <C-s> <Esc>:wa<CR>
-nnoremap <C-s> :wa<CR>
-
 " remove current buffer without closing window
 nnoremap <C-q> :bp\|bd #<CR>
 
@@ -84,12 +83,10 @@ set hidden "preserve syntax highlighting when switching buffers
 nnoremap <C-j> :cn<CR>
 nnoremap <C-k> :cp<CR>
 
-" Use ctrl+j in insert mode to simulate del behavior
-inoremap <C-j> <Del>
-
 " folding
 set foldmethod=manual
 set foldlevelstart=1
+
 let xml_syntax_folding=1
 
 " marks

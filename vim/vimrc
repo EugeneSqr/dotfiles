@@ -42,8 +42,10 @@ set expandtab
 set colorcolumn=80
 set cursorline
 
-" swap files
+" swap files and autosave
 set noswapfile 
+autocmd CursorHold,CursorHoldI * update
+set updatetime=300
 
 " file types 
 autocmd FileType make setlocal noexpandtab

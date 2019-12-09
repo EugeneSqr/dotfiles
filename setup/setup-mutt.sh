@@ -1,35 +1,65 @@
 #!/bin/bash
+function setup_account() {
+    progress "creating cache folders inside .mutt for $2"
+    mkdir -p ~/.mutt/$2/cache/{headers,bodies}
+    progress "creating certificate file inside .mutt"
+    touch ~/.mutt/$2/certificates
+
+    local account_muttrc=~/.mutt/$2/muttrc
+    if [ ! -f $account_muttrc ]; then
+        touch $account_muttrc
+    fi
+
+    appendLine $account_muttrc "set imap_user = \"$1\""
+    progress "Enter mail app password: "
+    local password
+    read password
+
+    appendLine $account_muttrc "set imap_pass = \"$password\""
+    appendLine $account_muttrc "set smtp_url = \"smtp://$2@smtp.gmail.com:587/\""
+    appendLine $account_muttrc "set smtp_pass = \"$password\""
+    appendLine $account_muttrc "set from = \"$1\""
+    appendLine $account_muttrc "set realname = \"Eugene Skurikhin\""
+    appendLine $account_muttrc "set header_cache=~/.mutt/$2/cache/headers"
+    appendLine $account_muttrc "set message_cachedir=~/.mutt/$2/cache/bodies"
+    appendLine $account_muttrc "set certificate_file=~/.mutt/$2/certificates"
+}
+
 progress "want to setup mutt with gmail (y/n)? "
 read should_setup_mutt
 if [ $should_setup_mutt = y ]; then
     if [ ! -d ~/.mutt ]; then
         progress "creating ~/.mutt folder"
         mkdir ~/.mutt
-        progress "creating cache folders inside .mutt"
-        mkdir -p ~/.mutt/cache/{headers,bodies}
-        progress "creating certificate file inside .mutt"
-        touch ~/.mutt/certificates
 
-        muttconfig=~/.mutt/muttrc
-        if [ ! -f $muttconfig ]; then
-            touch $muttconfig
+        progress "setting up personal accounts, enter empty email to skip"
+        account_names=()
+        while true; do
+            #setting up personal data
+            progress "Enter email address: "
+            read emailAddress #e.g. google@gmail.com
+            if [ "$emailAddress" == "" ]; then
+                break
+            fi
+            account_name=${emailAddress%@*}    #e.g. google
+            setup_account $emailAddress $account_name
+            account_names+=($account_name)
+        done
+
+        muttrc=~/.mutt/muttrc
+        if [ -f $muttrc ]; then
+            rm $muttrc
         fi
-        appendLine $muttconfig "source ~/bin/dotfiles/mutt/muttrc"
-        appendLine $muttconfig "source ~/bin/dotfiles/mutt/colorscheme.muttrc"
+        touch $muttrc
+        appendLine $muttrc "source ~/bin/dotfiles/mutt/muttrc"
+        appendLine $muttrc "source ~/bin/dotfiles/mutt/colorscheme.muttrc"
+        # default config
+        appendLine $muttrc "source ~/.mutt/${account_names[0]}/muttrc"
 
-        #setting up personal data
-        progress "Enter google account: "
-        read google_account                         #e.g. google@gmail.com
-        google_account_name=${google_account%@*}    #e.g. google
-        appendLine $muttconfig "set imap_user = \"$google_account\""
-        progress "Enter google mail app password (don't confuse with google password!): "
-        read gmail_password
-        appendLine $muttconfig "set imap_pass = \"$gmail_password\""
-        appendLine $muttconfig "set smtp_url = \"smtp://$google_account_name@smtp.gmail.com:587/\""
-        appendLine $muttconfig "set smtp_pass = \"$gmail_password\""
-        appendLine $muttconfig "set from = \"$google_account\""
-        appendLine $muttconfig "set realname = \"Eugene Skurikhin\""
-
+        # Macros for switching accounts
+        for i in "${!account_names[@]}"; do
+            appendLine $muttrc "macro index <f$((i+2))> '<sync-mailbox><enter-command>source ~/.mutt/${account_names[$i]}/muttrc<enter><change-folder>!<enter>'"
+        done
 
         mailcap=~/.mutt/mailcap
         if [ ! -f $mailcap ]; then

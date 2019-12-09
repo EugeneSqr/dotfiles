@@ -14,9 +14,6 @@ set imap_keepalive = 300
 set postponed = "+[Gmail]/Drafts"
 set trash= "+[Gmail]/Trash"
 set record = ""
-set header_cache=~/.mutt/cache/headers
-set message_cachedir=~/.mutt/cache/bodies
-set certificate_file=~/.mutt/certificates
 set move = no
 set include = yes
 set sort = "threads"
@@ -30,9 +27,6 @@ source $alias_file
 
 # Vim style quit
 bind index,pager ZZ quit
-# Vim nerd-tree style toggle
-macro index ,k "<enter-command>toggle sidebar_visible<enter>"
-macro pager ,k "<enter-command>toggle sidebar_visible<enter>"
 
 ignore "Authentication-Results:"
 ignore "DomainKey-Signature:"

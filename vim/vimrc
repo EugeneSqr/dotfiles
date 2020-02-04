@@ -96,6 +96,8 @@ nnoremap <leader>m :marks<CR>
 " nerd tree
 nnoremap <leader>k :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
+let g:NERDTreeDirArrowExpandable="+"
+let g:NERDTreeDirArrowCollapsible="~"
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers

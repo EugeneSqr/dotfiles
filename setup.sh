@@ -7,4 +7,3 @@
 . ./setup/setup-mutt.sh
 . ./setup/setup-terminator.sh
 . ./setup/setup-run-or-raise.sh
-. ./setup/setup-dropbox.sh

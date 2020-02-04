@@ -10,7 +10,7 @@ Install all of these using your OS's package manager
 * lynx
 * terminator
 * wmctrl
-* dropbox
+* Yandex Disk
 
 ## Setting up the environment
 Run setup.sh
@@ -19,9 +19,3 @@ Run setup.sh
 mkdir /home/$USER/.backup
 crontab -e
 @reboot bash /home/<username>/bin/dotfiles/backup.sh
-
-## Setup dropbox
-Some linux distributions can't handle dropbox autolaunch properly
-Here is how it can be done: https://github.com/joeroback/dropbox
-
-dropbox exclude add *.lock

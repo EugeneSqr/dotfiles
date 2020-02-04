@@ -1,6 +1,6 @@
 #!/bin/bash
 # What to backup. 
-backup_files="/home/$USER/Dropbox"
+backup_files="/home/$USER/Yandex.Disk"
 
 # Where to backup to.
 dest="/home/$USER/.backup"
@@ -19,7 +19,7 @@ date
 echo
 
 # Backup the files using tar.
-tar --exclude $backup_files/public --exclude $backup_files/.dropbox.cache -czf $dest/$archive_file $backup_files
+tar --exclude $backup_files/.sync -czf $dest/$archive_file $backup_files
 
 # Print end status message.
 echo

@@ -1,5 +1,5 @@
 # private aliases and variables
-source ~/Dropbox/private_configs/bashrc
+source ~/Yandex.Disk/private_configs/bashrc
 
 if [ "$TERM" == "xterm" ]; then
     export TERM=xterm-256color

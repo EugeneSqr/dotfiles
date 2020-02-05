@@ -9,6 +9,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'tomasr/molokai'
 Plugin 'elzr/vim-json'
+Plugin 'vim-python/python-syntax'
 Plugin 'groenewege/vim-less'
 Plugin 'pangloss/vim-javascript'
 Plugin 'tomtom/tcomment_vim'
@@ -112,6 +113,9 @@ let g:vim_json_syntax_conceal = 0
 
 " vim-javascript
 let g:javascript_plugin_jsdoc = 1
+
+" python-syntax
+let g:python_highlight_all = 1
 
 " run commands silently (returns back to vim right after command completion)
 " usage example with binding :Silent !ls

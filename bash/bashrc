@@ -28,10 +28,7 @@ if [ $? -eq 0 ]; then \
 fi)'$Reset$PS1
 
 # Aliases
-alias cls="clear"
-alias clr="clear"
 alias ls="ls --color"
-alias la="ls -la"
 alias lt="tree"
 
 alias gst="git status --short"

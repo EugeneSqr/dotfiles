@@ -32,6 +32,8 @@ alias ls="ls --color"
 alias ll="ls -la"
 alias lt="tree"
 
+alias grep="grep --color"
+
 alias gst="git status --short"
 alias gl="git log --oneline"
 

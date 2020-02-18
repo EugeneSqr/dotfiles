@@ -10,6 +10,8 @@ Install all of these using your OS's package manager
 * lynx
 * terminator
 * wmctrl
+* tree
+* highlight
 * Yandex Disk
 
 ## Setting up the environment

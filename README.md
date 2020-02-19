@@ -11,7 +11,6 @@ Install all of these using your OS's package manager
 * terminator
 * wmctrl
 * tree
-* highlight
 * Yandex Disk
 
 ## Setting up the environment

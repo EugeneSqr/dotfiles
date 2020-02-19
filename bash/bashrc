@@ -33,8 +33,6 @@ alias lt="tree --dirsfirst --filelimit 30 -L 2"
 
 alias grep="grep --color"
 
-alias chl="highlight -O ansi --force" # cat with highlight
-
 alias gst="git status --short"
 alias gl="git log --oneline"
 

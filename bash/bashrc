@@ -6,7 +6,6 @@ if [ "$TERM" == "xterm" ]; then
 fi
 
 # Input and default editor
-set -o vi
 EDITOR=vim
 
 stty -ixon -ixoff

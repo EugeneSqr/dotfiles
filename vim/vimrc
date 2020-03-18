@@ -47,7 +47,7 @@ set cursorline
 " swap files and autosave
 set noswapfile 
 autocmd CursorHold,CursorHoldI,BufLeave * update
-set updatetime=1000
+set updatetime=500
 " faster shift+O recognition in insert mode
 " arrow keys can no be used in insert mode however
 set noesckeys

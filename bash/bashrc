@@ -27,7 +27,7 @@ if [ $? -eq 0 ]; then \
 fi)'$Reset$PS1
 
 # Aliases
-alias ls="ls --color --human-readable"
+alias ls="ls --color --human-readable --group-directories-first"
 alias ll="ls -la"
 alias lt="tree --dirsfirst --filelimit 30 -L 2"
 

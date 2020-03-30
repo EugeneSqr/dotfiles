@@ -65,8 +65,8 @@ nnoremap ,<space> :nohlsearch<CR>
 " search down into subfolders 
 " provides tab-completion for all file-related tasks
 set path+=**
-" display all matching file when we tab complete
-set wildmenu
+set wildmenu " display all matching file when we tab complete
+setglobal complete-=i " exclude included files from ctrl + p completion
 
 " spellcheck (make sure Russian dictionary is set up)
 nnoremap <F5> :setlocal spell! spelllang=en_us<CR>

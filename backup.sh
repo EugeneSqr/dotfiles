@@ -9,7 +9,7 @@ if [ ! -d $dest ]; then
 fi
 
 # Create archive filename.
-day=$(date +%A)
+day=$(LANG=en_us_88591;date +%A)
 hostname=$(hostname -s)
 archive_file="$hostname-$day.tgz"
 

@@ -5,13 +5,14 @@ if [ "$TERM" == "xterm" ]; then
     export TERM=xterm-256color
 fi
 
-# Input and default editor
+# input and default editor
 EDITOR=vim
 
 stty -ixon -ixoff
 
-# Color git command line
-. ~/bin/dotfiles/bash/git-prompt.sh
+source ~/bin/dotfiles/bash/grc.bashrc    # colorize some common commands
+# colorize git command line
+source ~/bin/dotfiles/bash/git-prompt.sh
 Red="\[\033[1;31m\]"
 Green="\[\033[1;32m\]"
 Reset="\[$(tput sgr0)\]"
@@ -26,7 +27,7 @@ if [ $? -eq 0 ]; then \
     fi) "; \
 fi)'$Reset$PS1
 
-# Aliases
+# aliases
 alias ls="ls --color --human-readable --group-directories-first"
 alias ll="ls -la"
 alias lt="tree --dirsfirst --filelimit 30 -L 2"

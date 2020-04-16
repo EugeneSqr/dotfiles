@@ -11,12 +11,10 @@ Install all of these using your OS's package manager
 * terminator
 * wmctrl
 * tree
+* grc
 * Yandex Disk
 
 ## Setting up the environment
-Run setup.sh
-
-## Don't forget to setup backup routine
-mkdir /home/$USER/.backup
-crontab -e
-@reboot bash /home/<username>/bin/dotfiles/backup.sh
+mkdir -p ~/bin && cd ~/bin
+git clone git@github.com:EugeneSqr/dotfiles.git
+./setup.sh

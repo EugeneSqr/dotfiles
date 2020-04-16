@@ -5,6 +5,7 @@
   go_left = <Alt>h
   go_right = <Alt>l
   go_up = <Alt>k
+  toggle_zoom = <Alt>f
   layout_launcher = None
 [layouts]
   [[default]]

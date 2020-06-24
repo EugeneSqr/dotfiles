@@ -17,6 +17,8 @@ Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'tpope/vim-surround'
 Plugin 'tbknl/vimproject'
 Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'eugenesqr/vim-arg-wrap'
+"Plugin 'file:///home/eugenesqr/bin/vim-arg-wrap'
 call vundle#end()
 filetype plugin indent on     " required!
 
@@ -39,6 +41,7 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set smarttab
 
 " max line length indication according to PEP8
 set colorcolumn=100
@@ -115,6 +118,10 @@ let g:javascript_plugin_jsdoc = 1
 
 " python-syntax
 let g:python_highlight_all = 1
+
+" vim-arg-wrap
+nnoremap <leader>j :WrapArgs<cr>
+nnoremap <leader>j :WrapArgsBack<cr>
 
 " run commands silently (returns back to vim right after command completion)
 " usage example with binding :Silent !ls

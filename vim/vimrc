@@ -121,7 +121,7 @@ let g:python_highlight_all = 1
 
 " vim-arg-wrap
 nnoremap <leader>j :WrapArgs<cr>
-nnoremap <leader>j :WrapArgsBack<cr>
+nnoremap <leader>J :WrapArgsBack<cr>
 
 " run commands silently (returns back to vim right after command completion)
 " usage example with binding :Silent !ls

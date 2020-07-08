@@ -32,9 +32,9 @@ function setup_account() {
     appendLine $account_muttrc "macro index gs \"<change-folder>=[Gmail]/Sent%20Mail<enter>\" \"Go to sent mail\""
     appendLine $account_muttrc "macro index gt \"<change-folder>=[Gmail]/Trash<enter>\" \"Go to trash\""
     appendLine $account_muttrc "bind  index,pager d  noop"
-    appendLine $account_muttrc "macro index,pager dd \":set resolve=no\\n<clear-flag>N<save-message>=[Gmail]/Trash<enter><enter>\" \"Trash\""
+    appendLine $account_muttrc "macro index,pager dd \":set delete=yes resolve=no<enter><clear-flag>N<save-message>=[Gmail]/Trash<enter><enter><sync-mailbox>\" \"Trash\""
     appendLine $account_muttrc "bind  index,pager y  noop"
-    appendLine $account_muttrc "macro index,pager yy \":set resolve=no\\n<clear-flag>N<save-message>=[Gmail]/All%20Mail<enter><enter>\" \"Archive\""
+    appendLine $account_muttrc "macro index,pager yy \":set delete=yes resolve=no<enter><clear-flag>N<save-message>=[Gmail]/All%20Mail<enter><enter><sync-mailbox>\" \"Archive\""
 }
 
 progress "want to setup mutt with gmail (y/n)? "

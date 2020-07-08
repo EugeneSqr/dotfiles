@@ -4,15 +4,10 @@
 # Use vim as editor without word wrap
 set editor="vim +':set textwidth=0'"
 
-set folder = "imaps://imap.gmail.com:993"
-set spoolfile = "+INBOX"
 set imap_check_subscribed
-set hostname = gmail.com
 set mail_check = 120
 set timeout = 300
 set imap_keepalive = 300
-set postponed = "+[Gmail]/Drafts"
-set trash= "+[Gmail]/Trash"
 set record = ""
 set move = no
 set include = yes

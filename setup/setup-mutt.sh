@@ -15,6 +15,10 @@ function setup_account() {
     local password
     read password
 
+    appendLine $account_muttrc "set folder = \"imaps://imap.gmail.com:993\""
+    appendLine $account_muttrc "set spoolfile = \"+INBOX\""
+    appendLine $account_muttrc "set postponed = \"+[Gmail]/Drafts\""
+    appendLine $account_muttrc "set trash= \"+[Gmail]/Trash\""
     appendLine $account_muttrc "set imap_pass = \"$password\""
     appendLine $account_muttrc "set smtp_url = \"smtp://$2@smtp.gmail.com:587/\""
     appendLine $account_muttrc "set smtp_pass = \"$password\""

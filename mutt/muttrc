@@ -32,19 +32,3 @@ hdr_order Date From To Cc
 set mailcap_path    = ~/.mutt/mailcap
 alternative_order text/plain text/html *
 auto_view text/html
-# bind editor <Tab> complete-query
-# bind editor ^T complete
-# bind editor <space> noop
-#
-# Gmail-style keyboard shortcuts
-bind  index g  noop
-macro index ga "<change-folder>=[Gmail]/All%20Mail<enter>" "Go to all mail"
-macro index gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
-macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
-macro index gs "<change-folder>=[Gmail]/Sent%20Mail<enter>" "Go to sent mail"
-macro index gt "<change-folder>=[Gmail]/Trash<enter>" "Go to trash"
-
-bind  index,pager d  noop
-macro index,pager dd "<save-message>=[Gmail]/Trash<enter><enter>" "Trash"
-bind  index,pager y  noop
-macro index,pager yy "<save-message>=[Gmail]/All%20Mail<enter><enter>" "Archive"

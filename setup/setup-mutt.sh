@@ -18,7 +18,7 @@ function setup_account() {
     appendLine $account_muttrc "set folder = \"imaps://imap.gmail.com:993\""
     appendLine $account_muttrc "set spoolfile = \"+INBOX\""
     appendLine $account_muttrc "set postponed = \"+[Gmail]/Drafts\""
-    appendLine $account_muttrc "set trash= \"+[Gmail]/Trash\""
+    appendLine $account_muttrc "set trash = \"+[Gmail]/Trash\""
     appendLine $account_muttrc "set imap_pass = \"$password\""
     appendLine $account_muttrc "set smtp_url = \"smtp://$2@smtp.gmail.com:587/\""
     appendLine $account_muttrc "set smtp_pass = \"$password\""
@@ -27,6 +27,14 @@ function setup_account() {
     appendLine $account_muttrc "set header_cache=~/.mutt/$2/cache/headers"
     appendLine $account_muttrc "set message_cachedir=~/.mutt/$2/cache/bodies"
     appendLine $account_muttrc "set certificate_file=~/.mutt/$2/certificates"
+    appendLine $account_muttrc "bind  index g  noop"
+    appendLine $account_muttrc "macro index gi \"<change-folder>=INBOX<enter>\" \"Go to inbox\""
+    appendLine $account_muttrc "macro index gs \"<change-folder>=[Gmail]/Sent%20Mail<enter>\" \"Go to sent mail\""
+    appendLine $account_muttrc "macro index gt \"<change-folder>=[Gmail]/Trash<enter>\" \"Go to trash\""
+    appendLine $account_muttrc "bind  index,pager d  noop"
+    appendLine $account_muttrc "macro index,pager dd \":set resolve=no\\n<clear-flag>N<save-message>=[Gmail]/Trash<enter><enter>\" \"Trash\""
+    appendLine $account_muttrc "bind  index,pager y  noop"
+    appendLine $account_muttrc "macro index,pager yy \":set resolve=no\\n<clear-flag>N<save-message>=[Gmail]/All%20Mail<enter><enter>\" \"Archive\""
 }
 
 progress "want to setup mutt with gmail (y/n)? "

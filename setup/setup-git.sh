@@ -1,5 +1,5 @@
 #!/bin/bash
-progress "want to setup git (y/n)? "
+echo "setup git (y/n)? "
 read should_setup_git
 if [ $should_setup_git = y ]; then
     gitconfig=~/.gitconfig
@@ -14,10 +14,5 @@ if [ $should_setup_git = y ]; then
         echo "    email = $github_email" >> $gitconfig
         echo "[include]" >> $gitconfig
         echo "    path = bin/dotfiles/gitconfig" >> $gitconfig
-        pass "setting up git"
-    else
-        pass "setting up git (already set up)"
     fi
-else
-    pass "setting up git (skipped)"
 fi

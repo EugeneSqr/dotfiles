@@ -1,8 +1,6 @@
 #!/bin/bash
 function setup_account() {
-    progress "creating cache folders inside .mutt for $2"
     mkdir -p ~/.mutt/$2/cache/{headers,bodies}
-    progress "creating certificate file inside .mutt"
     touch ~/.mutt/$2/certificates
 
     local account_muttrc=~/.mutt/$2/muttrc
@@ -11,7 +9,7 @@ function setup_account() {
     fi
 
     appendLine $account_muttrc "set imap_user = \"$1\""
-    progress "Enter mail app password: "
+    echo "Enter mail app password: "
     local password
     read password
 
@@ -37,23 +35,21 @@ function setup_account() {
     appendLine $account_muttrc "macro index,pager yy \":set delete=yes resolve=no<enter><clear-flag>N<save-message>=[Gmail]/All%20Mail<enter><enter><sync-mailbox>\" \"Archive\""
 }
 
-progress "want to setup mutt with gmail (y/n)? "
+echo "setup mutt with gmail (y/n)? "
 read should_setup_mutt
 if [ $should_setup_mutt = y ]; then
     if [ ! -d ~/.mutt ]; then
-        progress "creating ~/.mutt folder"
         mkdir ~/.mutt
 
-        progress "setting up personal accounts, enter empty email to skip"
         account_names=()
         while true; do
-            #setting up personal data
-            progress "Enter email address: "
-            read emailAddress #e.g. google@gmail.com
+            # setting up personal data
+            echo "Enter email address: "
+            read emailAddress # e.g. google@gmail.com
             if [ "$emailAddress" == "" ]; then
                 break
             fi
-            account_name=${emailAddress%@*}    #e.g. google
+            account_name=${emailAddress%@*}    # e.g. google
             setup_account $emailAddress $account_name
             account_names+=($account_name)
         done
@@ -80,11 +76,5 @@ if [ $should_setup_mutt = y ]; then
             appendLine $mailcap "application/rtf; okular %s;"
             appendLine $mailcap "application/pdf; okular %s;"
         fi
-
-        pass "setting up mutt"
-    else
-        pass "setting up mutt (already set up)"
     fi
-else
-    pass "setting up mutt (skipped)"
 fi

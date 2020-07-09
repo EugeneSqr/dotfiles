@@ -1,30 +1,32 @@
 #!/bin/bash
-progress "source vimrc"
 appendLine ~/.vim/vimrc ":so ~/bin/dotfiles/vim/vimrc"
-pass "source vimrc"
-
-progress "setup vim Russian spell check"
+# Russian spellcheck
 wget http://ftp.vim.org/vim/runtime/spell/ru.utf-8.{spl,sug} -NP ~/.vim/spell
-pass "setup vim Russian spell check"
-
-progress "setup vim personal dictionary for Russian"
+# Russian personal dictionary
 if [ ! -f ~/.vim/spell/ru.utf-8.add ]; then
     ln -s ~/bin/dotfiles/vim/spell/ru.utf-8.add ~/.vim/spell/ru.utf-8.add
 fi
-pass "setup vim personal dictionary for Russian"
-
-progress "setup vim personal dictionary for English"
+# English personal dictionary
 if [ ! -f ~/.vim/spell/en.utf-8.add ]; then
     ln -s ~/bin/dotfiles/vim/spell/en.utf-8.add ~/.vim/spell/en.utf-8.add
 fi
-pass "setup vim personal dictionary for English"
-
-progress "setting up vundle (missing color scheme is ok)"
+# Vundle + plugins
 if [ ! -d ~/.vim/bundle ]; then
-    echo -en "\n"
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
-else
-    progress "already set up"
 fi
-pass "setting up vundle"
+# Powerline fonts for vim Airline
+fontDir=~/.local/share/fonts
+fontName=PowerlineSymbols.otf
+mkdir -p $fontDir
+if [ ! -f $fontDir/$fontName ]; then
+    wget https://github.com/Lokaltog/powerline/raw/develop/font/$fontName -qP $fontDir
+    fc-cache -f -v
+fi
+
+fontConfigDir=~/.config/fontconfig/fonts.conf
+fontConfigName=10-powerline-symbols.conf
+mkdir -p $fontConfigDir
+if [ ! -f $fontConfigDir/$fontConfigName ]; then
+    wget https://github.com/Lokaltog/powerline/raw/develop/font/$fontConfigName -qP $fontConfigDir
+fi

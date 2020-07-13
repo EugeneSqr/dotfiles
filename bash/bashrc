@@ -10,9 +10,9 @@ EDITOR=vim
 
 stty -ixon -ixoff
 
-source ~/bin/dotfiles/bash/grc.bashrc    # colorize some common commands
+source $dotfiles_dir/bash/grc.bashrc    # colorize some common commands
 # colorize git command line
-source ~/bin/dotfiles/bash/git-prompt.sh
+source $dotfiles_dir/bash/git-prompt.sh
 Red="\[\033[1;31m\]"
 Green="\[\033[1;32m\]"
 Reset="\[$(tput sgr0)\]"
@@ -38,10 +38,4 @@ alias gst="git status --short"
 alias gl="git log --oneline"
 
 alias dwn="cd $HOME/Downloads"
-alias dot="cd $HOME/bin/dotfiles"
 alias site="cd $HOME/bin/site"
-
-# pretty print json
-jp() {
-    echo "$1" | python -m json.tool | vim -c "setfiletype json" -
-}

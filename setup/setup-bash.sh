@@ -1,2 +1,4 @@
 #!/bin/bash
-appendLine ~/.bashrc ". ~/bin/dotfiles/bash/bashrc"
+appendLine ~/.bashrc "dotfiles_dir=$dotfiles_dir"
+appendLine ~/.bashrc '. $dotfiles_dir/bash/bashrc'
+appendLine ~/.bashrc 'alias dot="cd $dotfiles_dir"'

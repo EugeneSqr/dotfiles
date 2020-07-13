@@ -59,8 +59,8 @@ if [ $should_setup_mutt = y ]; then
             rm $muttrc
         fi
         touch $muttrc
-        appendLine $muttrc "source ~/bin/dotfiles/mutt/muttrc"
-        appendLine $muttrc "source ~/bin/dotfiles/mutt/colorscheme.muttrc"
+        appendLine $muttrc "source $dotfiles_dir/mutt/muttrc"
+        appendLine $muttrc "source $dotfiles_dir/mutt/colorscheme.muttrc"
         # default config
         appendLine $muttrc "source ~/.mutt/${account_names[0]}/muttrc"
 

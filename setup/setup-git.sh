@@ -7,5 +7,5 @@ if [ $should_setup_git = y ]; then
     sed -i "s/<name>/$input_name/g" $gitconfig
     read -p "Enter github email: " input_email
     sed -i "s/<email>/$input_email/g" $gitconfig
-    sed -i "s:<path>:$PWD\/gitconfig:g" $gitconfig
+    sed -i "s:<path>:$dotfiles_dir\/gitconfig:g" $gitconfig
 fi

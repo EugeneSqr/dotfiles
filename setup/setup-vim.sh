@@ -1,5 +1,5 @@
 #!/bin/bash
-appendLine ~/.vim/vimrc ":so $dotfiles_dir/vim/vimrc"
+append_line ~/.vim/vimrc ":so $dotfiles_dir/vim/vimrc"
 # Russian spellcheck
 wget http://ftp.vim.org/vim/runtime/spell/ru.utf-8.{spl,sug} -NP ~/.vim/spell
 # Russian personal dictionary

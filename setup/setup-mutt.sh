@@ -33,13 +33,13 @@ if [ $should_setup_mutt = y ]; then
 
     muttrc=~/.mutt/muttrc
     touch $muttrc
-    appendLine $muttrc "source $dotfiles_dir/mutt/muttrc"
-    appendLine $muttrc "source $dotfiles_dir/mutt/colorscheme.muttrc"
+    append_line $muttrc "source $dotfiles_dir/mutt/muttrc"
+    append_line $muttrc "source $dotfiles_dir/mutt/colorscheme.muttrc"
     # default config
-    appendLine $muttrc "source ~/.mutt/${local_folder_names[0]}/muttrc"
+    append_line $muttrc "source ~/.mutt/${local_folder_names[0]}/muttrc"
     # switching accounts
     for i in "${!local_folder_names[@]}"; do
-        appendLine $muttrc "macro index <f$((i+2))> '<sync-mailbox><enter-command>source ~/.mutt/${local_folder_names[$i]}/muttrc<enter><change-folder>!<enter>'"
+        append_line $muttrc "macro index <f$((i+2))> '<sync-mailbox><enter-command>source ~/.mutt/${local_folder_names[$i]}/muttrc<enter><change-folder>!<enter>'"
     done
     mailcap=~/.mutt/mailcap
     cp $dotfiles_dir/setup/mailcap ~/.mutt/

@@ -35,8 +35,7 @@ function setup_account() {
     appendLine $account_muttrc "macro index,pager yy \":set delete=yes resolve=no<enter><clear-flag>N<save-message>=[Gmail]/All%20Mail<enter><enter><sync-mailbox>\" \"Archive\""
 }
 
-echo "setup mutt with gmail (y/n)? "
-read should_setup_mutt
+read -p "Setup mutt? (y/n)? " should_setup_mutt
 if [ $should_setup_mutt = y ]; then
     if [ ! -d ~/.mutt ]; then
         mkdir ~/.mutt
@@ -70,11 +69,9 @@ if [ $should_setup_mutt = y ]; then
         done
 
         mailcap=~/.mutt/mailcap
-        if [ ! -f $mailcap ]; then
-            touch $mailcap
-            appendLine $mailcap "text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -dump %s; nametemplate=%s.html; copiousoutput"
-            appendLine $mailcap "application/rtf; okular %s;"
-            appendLine $mailcap "application/pdf; okular %s;"
-        fi
+        touch $mailcap
+        appendLine $mailcap "text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -dump %s; nametemplate=%s.html; copiousoutput"
+        appendLine $mailcap "application/rtf; okular %s;"
+        appendLine $mailcap "application/pdf; okular %s;"
     fi
 fi

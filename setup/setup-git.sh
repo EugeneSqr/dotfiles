@@ -1,18 +1,11 @@
 #!/bin/bash
-echo "setup git (y/n)? "
-read should_setup_git
+read -p "Setup git (y/n)? " should_setup_git
 if [ $should_setup_git = y ]; then
     gitconfig=~/.gitconfig
-    if [ ! -f $gitconfig ]; then
-        echo -n "Enter github name: "
-        read github_name
-        echo -n "Enter github email: "
-        read github_email
-        touch $gitconfig
-        echo "[User]" >> $gitconfig
-        echo "    name = $github_name" >> $gitconfig
-        echo "    email = $github_email" >> $gitconfig
-        echo "[include]" >> $gitconfig
-        echo "    path = bin/dotfiles/gitconfig" >> $gitconfig
-    fi
+    cp ./setup/template.gitconfig $gitconfig
+    read -p "Enter github name: " input_name
+    sed -i "s/<name>/$input_name/g" $gitconfig
+    read -p "Enter github email: " input_email
+    sed -i "s/<email>/$input_email/g" $gitconfig
+    sed -i "s:<path>:$PWD\/gitconfig:g" $gitconfig
 fi

@@ -1,0 +1,5 @@
+[User]
+    name = <name>
+    email = <email>
+[include]
+    path = <path>

@@ -47,6 +47,9 @@ set smarttab
 set colorcolumn=100
 set cursorline
 
+" highlight bracket pairs
+hi MatchParen cterm=bold ctermbg=none ctermfg=none
+
 " swap files and autosave
 set noswapfile 
 autocmd CursorHold,CursorHoldI,BufLeave * update

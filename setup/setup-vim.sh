@@ -1,4 +1,5 @@
 #!/bin/bash
+mkdir -p ~/.vim
 append_line ~/.vim/vimrc ":so $dotfiles_dir/vim/vimrc"
 # Russian spellcheck
 wget http://ftp.vim.org/vim/runtime/spell/ru.utf-8.{spl,sug} -NP ~/.vim/spell

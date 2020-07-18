@@ -38,4 +38,4 @@ alias gst="git status --short"
 alias gl="git log --oneline"
 
 alias dwn="cd $HOME/Downloads"
-alias site="cd $HOME/bin/site"
+alias site="cd $HOME/Documents/site"

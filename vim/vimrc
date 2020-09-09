@@ -87,6 +87,8 @@ nnoremap <C-q> :bp\|bd #<CR>
 nnoremap <C-h> :bprevious<CR>
 nnoremap <C-l> :bnext<CR>
 set hidden "preserve syntax highlighting when switching buffers
+" switch windows
+nnoremap <silent> <Tab> :wincmd w<CR>
 
 " quickfix
 nnoremap <C-j> :cn<CR>

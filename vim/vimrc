@@ -18,7 +18,9 @@ Plugin 'tpope/vim-surround'
 Plugin 'tbknl/vimproject'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'eugenesqr/vim-arg-wrap'
-"Plugin 'file:///home/eugenesqr/Documents/vim-arg-wrap'
+" Plugin 'file:///home/eugenesqr/Documents/vim-arg-wrap'
+" don't forget to create symlink in ~/.vim
+" ln -s ~/Documents/vim-arg-wrap vim-arg-wrap
 call vundle#end()
 filetype plugin indent on     " required!
 

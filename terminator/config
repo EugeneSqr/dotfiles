@@ -1,4 +1,5 @@
 [global_config]
+  tab_position = hidden
   window_state = maximise
 [keybindings]
   go_down = <Alt>j

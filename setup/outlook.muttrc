@@ -8,9 +8,9 @@ set smtp_url = "smtp://<username>@<host>@smtp.office365.com:587"
 set smtp_pass = "<password>"
 set from = "<username>@<host>"
 set realname = "<real_name>"
-set header_cache=~/.mutt/<local_folder_name>/cache/headers
-set message_cachedir=~/.mutt/<local_folder_name>/cache/bodies
-set certificate_file=~/.mutt/<local_folder_name>/certificates
+set header_cache=<local_folder>/cache/headers
+set message_cachedir=<local_folder>/cache/bodies
+set certificate_file=<local_folder>/certificates
 bind  index g  noop
 macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
 macro index gs "<change-folder>=Sent%20Items<enter>" "Go to sent mail"

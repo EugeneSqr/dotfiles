@@ -2,7 +2,8 @@
 function setup_account() {
     mkdir -p "$mutt_dir"/$2/cache/{headers,bodies}
     touch "$mutt_dir"/$2/certificates
-    local account_muttrc=$mutt_dir/$2/muttrc
+    local account_dir=$mutt_dir/$2
+    local account_muttrc=$account_dir/muttrc
     cp "$dotfiles_dir/setup/$1.muttrc" "$account_muttrc"
     read -p "Username: " account_username
     sed -i "s/<username>/$account_username/g" "$account_muttrc"
@@ -12,7 +13,7 @@ function setup_account() {
     sed -i "s/<real_name>/$account_real_name/g" "$account_muttrc"
     read -s -p "Password: " account_password
     sed -i "s/<password>/$account_password/g" "$account_muttrc"
-    sed -i "s/<local_folder_name>/$2/g" "$account_muttrc"
+    sed -i "s|<local_folder>|"$account_dir"|g" "$account_muttrc"
     echo ""
 }
 

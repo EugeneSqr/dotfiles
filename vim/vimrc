@@ -17,6 +17,7 @@ Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'tpope/vim-surround'
 Plugin 'tbknl/vimproject'
 Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'preservim/tagbar'
 Plugin 'eugenesqr/vim-arg-wrap'
 " Plugin 'file:///home/eugenesqr/Documents/vim-arg-wrap'
 " don't forget to create symlink in ~/.vim
@@ -127,6 +128,9 @@ let g:javascript_plugin_jsdoc = 1
 
 " python-syntax
 let g:python_highlight_all = 1
+
+" tagbar
+nmap <F8> :TagbarToggle<CR>
 
 " vim-arg-wrap
 nnoremap <leader>j :WrapArgs<cr>

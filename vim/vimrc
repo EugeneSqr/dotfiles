@@ -131,6 +131,7 @@ let g:python_highlight_all = 1
 
 " tagbar
 nmap <F8> :TagbarToggle<CR>
+let g:tagbar_sort = 0
 
 " vim-arg-wrap
 nnoremap <leader>j :WrapArgs<cr>

@@ -130,8 +130,9 @@ let g:javascript_plugin_jsdoc = 1
 let g:python_highlight_all = 1
 
 " tagbar
-nmap <F8> :TagbarToggle<CR>
+nmap <leader>q :TagbarToggle<CR>
 let g:tagbar_sort = 0
+let g:tagbar_autoclose = 1
 
 " vim-arg-wrap
 nnoremap <leader>j :WrapArgs<cr>

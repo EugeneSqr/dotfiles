@@ -39,3 +39,4 @@ alias gl="git log --oneline"
 
 alias dwn="cd $HOME/Downloads"
 alias site="cd $HOME/Documents/site"
+alias src="cd $HOME/Documents/src"

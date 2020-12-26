@@ -1,6 +1,9 @@
 # private aliases and variables
 source ~/Yandex.Disk/private_configs/bashrc
 
+# make sure executables can be run from $HOME/bin
+PATH=${PATH}:${HOME}/bin
+
 if [ "$TERM" == "xterm" ]; then
     export TERM=xterm-256color
 fi

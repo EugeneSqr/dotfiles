@@ -5,9 +5,11 @@ dotfiles
 Install all of these using your OS's package manager
 
 * git
+* wget
 * vim
 * mutt
 * lynx
+* mupdf
 * terminator
 * wmctrl
 * tree
@@ -16,6 +18,8 @@ Install all of these using your OS's package manager
 * Yandex Disk
 
 ## Setting up the environment
-mkdir -p ~/bin && cd ~/bin
-git clone git@github.com:EugeneSqr/dotfiles.git
+```
+mkdir -p ~/Documents && cd !$
+git clone git@github.com:EugeneSqr/dotfiles.git && cd dotfiles
 ./setup.sh
+```

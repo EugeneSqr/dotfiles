@@ -1,5 +1,5 @@
 [global_config]
-  window_state = maximise
+  window_state = fullscreen
   tab_position = hidden
 [keybindings]
   go_up = <Alt>k

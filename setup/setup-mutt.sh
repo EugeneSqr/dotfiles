@@ -37,14 +37,11 @@ if [ $should_setup_mutt = y ]; then
     touch "$muttrc"
     append_line $muttrc "source $dotfiles_dir/mutt/muttrc"
     append_line $muttrc "source $dotfiles_dir/mutt/colorscheme.muttrc"
+    append_line $muttrc "set mailcap_path = $dotfiles_dir/mutt/mailcap"
     # default config
     append_line $muttrc "source $mutt_dir/${local_folder_names[0]}/muttrc"
     # switching accounts
     for i in "${!local_folder_names[@]}"; do
         append_line $muttrc "macro index <f$((i+2))> '<sync-mailbox><enter-command>source $mutt_dir/${local_folder_names[$i]}/muttrc<enter><change-folder>!<enter>'"
     done
-    mailcap=$mutt_dir/mailcap
-    cp "$dotfiles_dir/setup/mailcap" "$mutt_dir"
-    read -p "Open PDF with: " pdf_viewer
-    sed -i "s/<pdf_viewer>/$pdf_viewer/g" $mailcap
 fi

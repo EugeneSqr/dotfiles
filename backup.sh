@@ -10,7 +10,7 @@ fi
 
 # Create archive filename.
 day=$(LANG=en_us_88591;date +%A)
-hostname=$(hostname -s)
+hostname=$(cat /proc/sys/kernel/hostname)
 archive_file="$hostname-$day.tgz"
 
 # Print start status message.

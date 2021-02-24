@@ -1,8 +1,0 @@
-[include]
-    path = <path>
-[diff]
-    submodule = log
-[status]
-    submodulesummary = 1
-[push]
-	recurseSubmodules = check

@@ -1,9 +1,10 @@
 #!/bin/bash
 # What to backup. 
-backup_files="/home/$USER/Yandex.Disk"
+yandex_disk="$HOME/Yandex.Disk"
+documents="$HOME/Documents/cloud"
 
 # Where to backup to.
-dest="/home/$USER/.backup"
+dest="$HOME/.backup"
 if [ ! -d $dest ]; then
     mkdir $dest
 fi
@@ -14,12 +15,14 @@ hostname=$(cat /proc/sys/kernel/hostname)
 archive_file="$hostname-$day.tgz"
 
 # Print start status message.
-echo "Backing up $backup_files to $dest/$archive_file"
+echo "Backing up $yandex_disk $documents to $dest/$archive_file"
 date
 echo
 
 # Backup the files using tar.
-tar --exclude $backup_files/.sync -czf $dest/$archive_file $backup_files
+tar --exclude $yandex_disk/.sync \
+    --exclude $yandex_disk/encrypted \
+    -czf $dest/$archive_file $yandex_disk $documents
 
 # Print end status message.
 echo

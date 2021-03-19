@@ -5,7 +5,6 @@ dotfiles
 Install all of these using your OS's package manager
 
 * git
-* wget
 * vim
 * mutt
 * lynx

@@ -33,7 +33,7 @@ fi)'$Reset$PS1
 # aliases
 alias ls="ls --color --human-readable --group-directories-first"
 alias ll="ls -la"
-alias lt="tree -a --dirsfirst --filelimit 30 -L 2"
+alias lt="tree -a --dirsfirst --filelimit 30 -L 3 | less"
 
 alias grep="grep --color"
 

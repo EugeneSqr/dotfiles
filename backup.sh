@@ -1,7 +1,7 @@
 #!/bin/bash
 # What to backup. 
 yandex_disk="$HOME/Yandex.Disk"
-documents="$HOME/Documents/cloud"
+documents="$HOME/Documents/private"
 
 # Where to backup to.
 dest="$HOME/.backup"
@@ -21,7 +21,7 @@ echo
 
 # Backup the files using tar.
 tar --exclude $yandex_disk/.sync \
-    --exclude $yandex_disk/encrypted \
+    --exclude $yandex_disk/.private \
     -czf $dest/$archive_file $yandex_disk $documents
 
 # Print end status message.

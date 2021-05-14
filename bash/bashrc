@@ -37,7 +37,7 @@ alias lt="tree -a --dirsfirst --filelimit 30 -L 2 -C"
 
 alias grep="grep --color"
 
-alias gst="git status --short"
+alias gs="git status --short"
 alias gl="git log --oneline"
 alias gd="git diff"
 alias ga="git add ."

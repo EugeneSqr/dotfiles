@@ -19,6 +19,7 @@ Plugin 'tbknl/vimproject'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'preservim/tagbar'
 Plugin 'vim-scripts/bats.vim'
+Plugin 'vimwiki/vimwiki'
 Plugin 'eugenesqr/vim-arg-wrap'
 " Plugin 'file:///home/eugenesqr/Documents/vim-arg-wrap'
 " don't forget to create symlink in ~/.vim
@@ -138,6 +139,10 @@ let g:tagbar_autoclose = 1
 " vim-arg-wrap
 nnoremap <leader>j :WrapArgs<cr>
 nnoremap <leader>J :WrapArgsBack<cr>
+
+" vimwiki
+let g:vimwiki_list = [{'path': '~/Documents/private/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
 
 " run commands silently (returns back to vim right after command completion)
 " usage example with binding :Silent !ls

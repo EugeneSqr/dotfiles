@@ -1,3 +1,5 @@
 # single tab completion as opposed to requiring a double tab
 set show-all-if-ambiguous on
 set colored-completion-prefix on
+
+TAB: menu-complete

@@ -3,6 +3,7 @@ set -e
 XDG_CONFIG_HOME=${XDG_CONFIG_HME:="$HOME/.config"}
 dotfiles_dir=$PWD
 . ./setup/helper-functions.sh
+. ./setup/setup-readline.sh
 . ./setup/setup-bash.sh
 . ./setup/setup-vim.sh
 . ./setup/setup-git.sh

@@ -4,6 +4,7 @@ dotfiles
 ## Prerequisites
 Install all of these using your OS's package manager
 
+* bash-completion
 * git
 * vim
 * mutt

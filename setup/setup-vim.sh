@@ -31,5 +31,5 @@ font_config_dir=~/.config/fontconfig/fonts.conf
 font_config_name=10-powerline-symbols.conf
 mkdir -p $font_config_dir
 if [ ! -f $font_config_dir/$font_config_name ]; then
-    (cd $font_config_dir && curl -O https://github.com/Lokaltog/powerline/raw/develop/font/$font_config_name)
+    (cd $font_config_dir && curl --remote-name --location https://github.com/Lokaltog/powerline/raw/develop/font/$font_config_name)
 fi

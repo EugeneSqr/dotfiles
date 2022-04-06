@@ -13,7 +13,6 @@ Plugin 'vim-python/python-syntax'
 Plugin 'groenewege/vim-less'
 Plugin 'pangloss/vim-javascript'
 Plugin 'tomtom/tcomment_vim'
-Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'tpope/vim-surround'
 Plugin 'tbknl/vimproject'
 Plugin 'ekalinin/Dockerfile.vim'
@@ -39,7 +38,7 @@ syntax enable
 colorscheme molokai
 
 " Line numbers
-set number relativenumber
+set number norelativenumber
 
 " indentation all
 set smartindent

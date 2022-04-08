@@ -17,6 +17,7 @@ Install all of these using your OS's package manager
 * fzf
 * fd
 * bat
+* ripgrep
 * Yandex Disk
 
 ## Setting up the environment

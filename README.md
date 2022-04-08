@@ -14,7 +14,9 @@ Install all of these using your OS's package manager
 * wmctrl
 * tree
 * grc
-* universal-ctags
+* fzf
+* fd
+* bat
 * Yandex Disk
 
 ## Setting up the environment

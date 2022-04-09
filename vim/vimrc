@@ -52,14 +52,14 @@ hi MatchParen cterm=bold ctermbg=none ctermfg=none
 " viminfo location
 set viminfo+=n~/.vim/viminfo
 " swap files and autosave
-set noswapfile 
+set noswapfile
 autocmd CursorHold,CursorHoldI,BufLeave * update
 set updatetime=500
 " faster shift+O recognition in insert mode
 " arrow keys can no be used in insert mode however
 set noesckeys
 
-" file types 
+" file types
 autocmd FileType make setlocal noexpandtab
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 
@@ -69,7 +69,7 @@ set ignorecase
 set hlsearch
 nnoremap ,<space> :nohlsearch<CR>
 
-" search down into subfolders 
+" search down into subfolders
 " provides tab-completion for all file-related tasks
 set path+=**
 set wildmenu " display all matching file when we tab complete
@@ -107,8 +107,6 @@ nnoremap <leader>k :Files<CR>
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
-let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
-let g:airline#extensions#keymap#enabled = 0
 let g:airline_powerline_fonts = 1
 let g:airline_detect_modified = 0
 set laststatus=2

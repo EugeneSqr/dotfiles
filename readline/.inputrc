@@ -1,3 +1,6 @@
+set editing-mode vi
+set keymap vi
+
 # single tab completion as opposed to requiring a double tab
 set show-all-if-ambiguous on
 set colored-completion-prefix on

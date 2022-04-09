@@ -1,3 +1,5 @@
+set -o vi
+
 # private aliases and variables
 source ~/Yandex.Disk/private_configs/bashrc
 

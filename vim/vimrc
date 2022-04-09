@@ -8,7 +8,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'vim-scripts/bats.vim'
 Plugin 'tomasr/molokai'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tbknl/vimproject'
@@ -106,6 +107,7 @@ nnoremap <leader>m :marks<CR>
 nnoremap <leader>k :Files<CR>
 
 " Airline
+let g:airline_theme='molokai'
 let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
 let g:airline_powerline_fonts = 1
 let g:airline_detect_modified = 0

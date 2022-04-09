@@ -1,5 +1,8 @@
 set editing-mode vi
 set keymap vi
+set show-mode-in-prompt on
+set vi-ins-mode-string "+"
+set vi-cmd-mode-string ":"
 
 # single tab completion as opposed to requiring a double tab
 set show-all-if-ambiguous on

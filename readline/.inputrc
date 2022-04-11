@@ -1,5 +1,10 @@
 set editing-mode vi
 set keymap vi
+
+# keep Ctlr+L for clear screen in insert mode
+set keymap vi-insert
+Control-l: clear-screen
+
 set show-mode-in-prompt on
 set vi-ins-mode-string "$"
 set vi-cmd-mode-string ":"

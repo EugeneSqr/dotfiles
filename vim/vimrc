@@ -95,12 +95,10 @@ set foldlevelstart=1
 
 let xml_syntax_folding=1
 
-" marks
-nnoremap <leader>m :marks<CR>
-
 " fzf.vim
 nnoremap <leader>k :Files<CR>
-nnoremap ; :Buffers<CR>
+nnoremap <leader>m :Buffers<CR>
+nnoremap ; :Marks<CR>
 
 " Airline
 let g:airline_theme='molokai'

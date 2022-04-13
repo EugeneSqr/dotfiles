@@ -83,9 +83,9 @@ nnoremap <F6> :setlocal spell! spelllang=ru_ru<CR>
 " remove current buffer without closing window
 nnoremap <C-q> :bp\|bd #<CR>
 
-" buffers
-nnoremap <C-h> :bprevious<CR>
-nnoremap <C-l> :bnext<CR>
+" scrolling 1/2 screen
+nnoremap <C-j> <C-d>zz<CR>
+nnoremap <C-k> <C-u>zz<CR>
 " switch windows
 nnoremap <silent> <Tab> :wincmd w<CR>
 

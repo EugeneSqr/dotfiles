@@ -83,9 +83,6 @@ nnoremap <F6> :setlocal spell! spelllang=ru_ru<CR>
 " remove current buffer without closing window
 nnoremap <C-q> :bp\|bd #<CR>
 
-" scrolling 1/2 screen
-nnoremap <C-j> <C-d>zz<CR>
-nnoremap <C-k> <C-u>zz<CR>
 " switch windows
 nnoremap <silent> <Tab> :wincmd w<CR>
 
@@ -97,8 +94,7 @@ let xml_syntax_folding=1
 
 " fzf.vim
 nnoremap <leader>k :Files<CR>
-nnoremap <leader>m :Buffers<CR>
-nnoremap ; :Marks<CR>
+nnoremap ; :Buffers<CR>
 
 " Airline
 let g:airline_theme='molokai'

@@ -57,7 +57,7 @@ set noswapfile
 autocmd CursorHold,CursorHoldI,BufLeave * update
 set updatetime=500
 " faster shift+O recognition in insert mode
-" arrow keys can no be used in insert mode however
+" arrow keys can no longer be used in insert mode however
 set noesckeys
 
 " file types
@@ -86,13 +86,8 @@ nnoremap <C-q> :bp\|bd #<CR>
 " buffers
 nnoremap <C-h> :bprevious<CR>
 nnoremap <C-l> :bnext<CR>
-set hidden "preserve syntax highlighting when switching buffers
 " switch windows
 nnoremap <silent> <Tab> :wincmd w<CR>
-
-" quickfix
-nnoremap <C-j> :cn<CR>
-nnoremap <C-k> :cp<CR>
 
 " folding
 set foldmethod=manual
@@ -105,10 +100,10 @@ nnoremap <leader>m :marks<CR>
 
 " fzf.vim
 nnoremap <leader>k :Files<CR>
+nnoremap ; :Buffers<CR>
 
 " Airline
 let g:airline_theme='molokai'
-let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
 let g:airline_powerline_fonts = 1
 let g:airline_detect_modified = 0
 if !exists('g:airline_symbols')
@@ -116,20 +111,6 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_symbols.maxlinenr= ''
 let g:airline_symbols.colnr= ':'
-
-" vim-json
-let g:vim_json_syntax_conceal = 0
-
-" vim-javascript
-let g:javascript_plugin_jsdoc = 1
-
-" python-syntax
-let g:python_highlight_all = 1
-
-" tagbar
-nmap <leader>q :TagbarToggle<CR>
-let g:tagbar_sort = 0
-let g:tagbar_autoclose = 1
 
 " vim-arg-wrap
 nnoremap <leader>j :WrapArgs<cr>

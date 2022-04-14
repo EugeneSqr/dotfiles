@@ -12,7 +12,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-surround'
-Plugin 'tbknl/vimproject'
+Plugin 'jenterkin/vim-autosource'
+Plugin 'airblade/vim-rooter'
 Plugin 'vimwiki/vimwiki'
 Plugin 'junegunn/fzf.vim'
 Plugin 'eugenesqr/vim-arg-wrap'
@@ -95,6 +96,10 @@ let xml_syntax_folding=1
 " fzf.vim
 nnoremap <leader>k :Files<CR>
 nnoremap ; :Buffers<CR>
+
+" vim-autosource and vim-rooter
+let g:autosource_conf_names = ['.vimproject']
+let g:rooter_patterns = ['.vimproject']
 
 " Airline
 let g:airline_theme='molokai'

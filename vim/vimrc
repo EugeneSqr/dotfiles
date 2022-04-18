@@ -100,6 +100,7 @@ nnoremap ; :Buffers<CR>
 " vim-autosource and vim-rooter
 let g:autosource_conf_names = ['.vimproject']
 let g:rooter_patterns = ['.vimproject']
+autocmd BufRead,BufNewFile .vimproject set syntax=vim
 
 " Airline
 let g:airline_theme='molokai'

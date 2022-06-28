@@ -94,8 +94,8 @@ set foldlevelstart=1
 let xml_syntax_folding=1
 
 " fzf.vim
-nnoremap <leader>k :Files<CR>
-nnoremap <leader>; :Buffers<CR>
+nnoremap <leader>k :Files!<CR>
+nnoremap <leader>; :Buffers!<CR>
 
 " vim-autosource and vim-rooter
 let g:autosource_conf_names = ['.vimproject']

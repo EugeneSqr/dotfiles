@@ -25,6 +25,9 @@ filetype plugin indent on     " required!
 
 let mapleader=","
 
+" use system clipboard for yanks (y) and pastes (p)
+set clipboard=unnamedplus
+
 " Keymap
 set keymap=russian-jcukenwin
 set iminsert=0

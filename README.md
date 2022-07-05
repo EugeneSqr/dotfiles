@@ -11,6 +11,7 @@ Install all of these using your OS's package manager
 * lynx
 * mupdf
 * terminator
+* xfce4-terminal
 * wmctrl
 * tree
 * grc

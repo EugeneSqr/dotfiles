@@ -8,6 +8,6 @@ dotfiles_dir=$PWD
 . ./setup/setup-vim.sh
 . ./setup/setup-git.sh
 . ./setup/setup-mutt.sh
-. ./setup/setup-terminator.sh
 . ./setup/setup-xfce4-terminal.sh
+. ./setup/setup-tmux.sh
 . ./setup/setup-run-or-raise.sh

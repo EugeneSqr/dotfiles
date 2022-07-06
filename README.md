@@ -10,8 +10,8 @@ Install all of these using your OS's package manager
 * mutt
 * lynx
 * mupdf
-* terminator
 * xfce4-terminal
+* tmux
 * wmctrl
 * tree
 * grc

@@ -1,6 +1,3 @@
-dotfiles
-========
-
 ## Prerequisites
 Install all of these using your OS's package manager
 
@@ -12,6 +9,7 @@ Install all of these using your OS's package manager
 * mupdf
 * xfce4-terminal
 * tmux
+* xclip
 * wmctrl
 * tree
 * grc
@@ -22,7 +20,7 @@ Install all of these using your OS's package manager
 * Yandex Disk
 
 ## Setting up the environment
-```
+```bash
 mkdir -p ~/Documents && cd !$
 git clone git@github.com:EugeneSqr/dotfiles.git && cd dotfiles
 ./setup.sh

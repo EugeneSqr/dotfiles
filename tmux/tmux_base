@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+
+session_name=base
+primary_window_name=primary
+if ! tmux has-session -t "=$session_name" 2> /dev/null; then
+    tmux new-session -d -s "$session_name" -n "$primary_window_name"
+    tmux new-window -t "=$session_name" -n 'secondary'
+    tmux new-window -t "=$session_name" -n 'wiki' 'vim -c VimwikiIndex'
+    tmux new-window -t "=$session_name" -n 'cmus' 'cmus'
+    tmux select-window -t "=$primary_window_name"
+fi
+
+# -d for detaching other clients
+tmux switch-client -t "=$session_name" || tmux attach-session -d -t "=$session_name"

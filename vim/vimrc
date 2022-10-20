@@ -16,6 +16,7 @@ Plugin 'jenterkin/vim-autosource'
 Plugin 'airblade/vim-rooter'
 Plugin 'vimwiki/vimwiki'
 Plugin 'junegunn/fzf.vim'
+Plugin 'vim-test/vim-test'
 Plugin 'eugenesqr/vim-arg-wrap'
 " Plugin 'file:///home/eugenesqr/Documents/vim-arg-wrap'
 " don't forget to create symlink in ~/.vim

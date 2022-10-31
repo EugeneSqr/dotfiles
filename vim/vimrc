@@ -101,6 +101,7 @@ let xml_syntax_folding=1
 nnoremap <leader>k :Files!<CR>
 nnoremap <leader>; :Buffers!<CR>
 nnoremap <leader>f :Rg!<space>
+nnoremap <leader>d :GFiles!?<CR>
 
 " vim-autosource and vim-rooter
 let g:autosource_conf_names = ['.vimproject']

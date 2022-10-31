@@ -100,6 +100,8 @@ let xml_syntax_folding=1
 " fzf.vim
 nnoremap <leader>k :Files!<CR>
 nnoremap <leader>; :Buffers!<CR>
+" mind the trailing space after Rg!, it's actually needed
+nnoremap <leader>f :Rg! 
 
 " vim-autosource and vim-rooter
 let g:autosource_conf_names = ['.vimproject']

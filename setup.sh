@@ -1,7 +1,9 @@
 #!/bin/bash
 set -e
 XDG_CONFIG_HOME=${XDG_CONFIG_HME:="$HOME/.config"}
+HOME_LOCAL_BIN="$HOME/.local/bin"
 dotfiles_dir=$PWD
+mkdir -p "$HOME_LOCAL_BIN"
 . ./setup/helper-functions.sh
 . ./setup/setup-readline.sh
 . ./setup/setup-bash.sh

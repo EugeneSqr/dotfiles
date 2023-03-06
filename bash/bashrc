@@ -47,8 +47,10 @@ alias ga="git add ."
 alias gp="git remote prune origin"
 
 alias dwn="cd $HOME/Downloads"
-alias site="cd $HOME/Documents/site"
 alias src="cd $HOME/Documents/sources"
+
+alias tms="tmux_run start"
+alias tme="tmux_run end"
 
 # fuzzy find
 export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude .git"

@@ -1,7 +1,7 @@
 set -o vi
 
 # private aliases and variables
-source ~/Yandex.Disk/private_configs/bashrc
+source ~/Documents/private/configs/bashrc
 
 # make sure executables can be run from $HOME/.local/bin
 PATH=${PATH}:${HOME}/.local/bin

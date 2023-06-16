@@ -18,9 +18,6 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'junegunn/fzf.vim'
 Plugin 'vim-test/vim-test'
 Plugin 'eugenesqr/vim-arg-wrap'
-" Plugin 'file:///home/eugenesqr/Documents/vim-arg-wrap'
-" don't forget to create symlink in ~/.vim
-" ln -s ~/Documents/vim-arg-wrap vim-arg-wrap
 call vundle#end()
 filetype plugin indent on     " required!
 

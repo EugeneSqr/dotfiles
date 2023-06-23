@@ -17,6 +17,7 @@ Install all of these using your OS's package manager
 * fd
 * bat
 * ripgrep
+* ctags
 * Yandex Disk
 
 ## Setting up the environment

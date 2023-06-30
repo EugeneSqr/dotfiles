@@ -72,6 +72,9 @@ set ignorecase
 set hlsearch
 nnoremap ,<space> :nohlsearch<CR>
 
+" go to tag (single match), present list otherwise
+nnoremap <C-]> g<C-]>
+
 " spellcheck (make sure Russian dictionary is set up)
 nnoremap <F5> :setlocal spell! spelllang=en_us<CR>
 nnoremap <F6> :setlocal spell! spelllang=ru_ru<CR>

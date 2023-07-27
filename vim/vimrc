@@ -85,6 +85,9 @@ nnoremap <C-q> :bp\|bd #<CR>
 " switch windows
 nnoremap <silent> <Tab> :wincmd w<CR>
 
+" tab completion
+imap <Tab> <C-n>
+
 " folding
 set foldmethod=manual
 set foldlevelstart=1

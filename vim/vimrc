@@ -17,6 +17,7 @@ Plugin 'airblade/vim-rooter'
 Plugin 'vimwiki/vimwiki'
 Plugin 'junegunn/fzf.vim'
 Plugin 'vim-test/vim-test'
+Plugin 'SirVer/ultisnips'
 Plugin 'eugenesqr/vim-arg-wrap'
 call vundle#end()
 filetype plugin indent on     " required!

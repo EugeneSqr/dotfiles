@@ -96,6 +96,8 @@ nnoremap <leader>; :Buffers!<CR>
 nnoremap <leader>f :Rg!<space>
 nnoremap <leader>d :BCommits!<CR>
 
+" vim-fugitive + fzf.vim + git
+set diffopt +=vertical
 :command Gs !git status --short
 :command Ga !git add --all;git status --short
 :command Gp !git remote prune origin

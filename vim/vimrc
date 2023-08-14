@@ -98,11 +98,11 @@ nnoremap <leader>d :BCommits!<CR>
 
 " vim-fugitive + fzf.vim + git
 set diffopt +=vertical
-:command Gs !git status --short
-:command Ga !git add --all;git status --short
-:command Gp !git remote prune origin
-:command Gd GFiles!?
-:command Gl Commits!
+command Gs !git status --short
+command Ga !git add --all;git status --short
+command Gp !git remote prune origin
+command Gd GFiles!?
+command Gl Commits!
 
 " vim-autosource and vim-rooter
 let g:autosource_conf_names = ['.vimproject']

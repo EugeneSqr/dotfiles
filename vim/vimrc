@@ -81,9 +81,6 @@ nnoremap <C-]> g<C-]>
 nnoremap <F5> :setlocal spell! spelllang=en_us<CR>
 nnoremap <F6> :setlocal spell! spelllang=ru_ru<CR>
 
-" remove current buffer without closing window
-nnoremap <C-q> :bp\|bd #<CR>
-
 " switch windows
 nnoremap <silent> <Tab> :wincmd w<CR>
 
@@ -97,7 +94,13 @@ let xml_syntax_folding=1
 nnoremap <leader>k :Files!<CR>
 nnoremap <leader>; :Buffers!<CR>
 nnoremap <leader>f :Rg!<space>
-nnoremap <leader>d :GFiles!?<CR>
+nnoremap <leader>d :BCommits!<CR>
+
+:command Gs !git status --short
+:command Ga !git add --all;git status --short
+:command Gp !git remote prune origin
+:command Gd GFiles!?
+:command Gl Commits!
 
 " vim-autosource and vim-rooter
 let g:autosource_conf_names = ['.vimproject']

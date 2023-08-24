@@ -94,15 +94,20 @@ let xml_syntax_folding=1
 nnoremap <leader>k :Files!<CR>
 nnoremap <leader>; :Buffers!<CR>
 nnoremap <leader>f :Rg!<space>
-nnoremap <leader>d :BCommits!<CR>
+nnoremap <leader>s :GFiles!?<CR>
 
-" vim-fugitive + fzf.vim + git
+" vim-fugitive
 set diffopt +=vertical
-command Gs !git status --short
-command Ga !git add --all;git status --short
-command Gp !git remote prune origin
-command Gd GFiles!?
-command Gl Commits!
+function! ToggleGStatus()
+    if buflisted(bufname('.git//'))
+        bd .git//
+    else
+        G
+        normal! 6G
+    endif
+endfunction
+nnoremap <leader>g :call ToggleGStatus()<CR>
+nnoremap <leader>d :Gvdiffsplit<CR>
 
 " vim-autosource and vim-rooter
 let g:autosource_conf_names = ['.vimproject']

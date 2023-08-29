@@ -7,7 +7,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'vim-scripts/bats.vim'
-Plugin 'tomasr/molokai'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tomtom/tcomment_vim'
@@ -20,6 +19,7 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'vim-test/vim-test'
 Plugin 'SirVer/ultisnips'
 Plugin 'eugenesqr/vim-arg-wrap'
+Plugin 'eugenesqr/molokai'
 call vundle#end()
 filetype plugin indent on     " required!
 

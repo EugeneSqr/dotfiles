@@ -106,8 +106,15 @@ function! ToggleGStatus()
         normal! 6G
     endif
 endfunction
+function! ToggleGDiff()
+    if buflisted(bufname('.git//'))
+        bd .git//
+    else
+        Gdiff
+    endif
+endfunction
 nnoremap <leader>g :call ToggleGStatus()<CR>
-nnoremap <leader>d :Gvdiffsplit<CR>
+nnoremap <leader>d :call ToggleGDiff()<CR>
 
 " vim-autosource and vim-rooter
 let g:autosource_conf_names = ['.vimproject']

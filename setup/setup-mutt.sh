@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -e
+
 function setup_account() {
     mkdir -p "$mutt_dir"/$2/cache/{headers,bodies}
     touch "$mutt_dir"/$2/certificates

@@ -1,5 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -e
+
 read -p "Setup git (y/n)? " should_setup_git
 if [ $should_setup_git = y ]; then
     gitconfig_dir=$XDG_CONFIG_HOME/git

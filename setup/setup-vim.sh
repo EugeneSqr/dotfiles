@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -e
+
 mkdir -p ~/.vim/spell
 append_line ~/.vim/vimrc ":so $dotfiles_dir/vim/vimrc"
 # Russian spellcheck

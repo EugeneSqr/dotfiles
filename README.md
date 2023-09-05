@@ -18,6 +18,7 @@ Install all of these using your OS's package manager
 * bat
 * ripgrep
 * ctags
+* ptpython (pip install ptpython)
 * Yandex Disk
 
 ## Setting up the environment

@@ -1,5 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -e
+
 XDG_CONFIG_HOME=${XDG_CONFIG_HME:="$HOME/.config"}
 HOME_LOCAL_BIN="$HOME/.local/bin"
 dotfiles_dir=$PWD
@@ -14,3 +15,4 @@ mkdir -p "$HOME_LOCAL_BIN"
 . ./setup/setup-tmux.sh
 . ./setup/setup-run-or-raise.sh
 . ./setup/setup-ctags.sh
+. ./setup/setup-ptpython.sh

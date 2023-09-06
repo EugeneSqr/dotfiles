@@ -95,6 +95,9 @@ nnoremap <leader>k :Files!<CR>
 nnoremap <leader>; :Buffers!<CR>
 nnoremap <leader>f :Rg!<space>
 nnoremap <leader>s :GFiles!?<CR>
+" fzf preview window scrolling like in vim
+let $FZF_DEFAULT_OPTS="--bind ctrl-k:preview-up,ctrl-j:preview-down,
+\ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down"
 
 " vim-fugitive
 set diffopt +=vertical

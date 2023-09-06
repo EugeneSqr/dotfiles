@@ -110,8 +110,8 @@ function! ToggleGStatus()
     endif
 endfunction
 function! ToggleGDiff()
-    if buflisted(bufname('.git//'))
-        bd .git//
+    if buflisted(bufname('.git//?'))
+        bd .git//?
     else
         Gdiff
     endif

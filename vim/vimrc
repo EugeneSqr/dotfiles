@@ -118,6 +118,12 @@ function! ToggleGDiff()
 endfunction
 nnoremap <leader>g :call ToggleGStatus()<CR>
 nnoremap <leader>d :call ToggleGDiff()<CR>
+augroup custom_fugitive_mappings
+    " delete custom_fugitive_mappings to avoid double runs
+    au!
+    " map 'A' to stage all in git status window
+    au User FugitiveIndex nnoremap <buffer> A :Git add .<cr>
+augroup END
 
 " vim-autosource and vim-rooter
 let g:autosource_conf_names = ['.vimproject']

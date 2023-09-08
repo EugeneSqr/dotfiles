@@ -1,5 +1,4 @@
 set nocompatible              " be iMproved
-
 " Vundle
 filetype off                  " required!
 set rtp+=~/.vim/bundle/Vundle.vim/
@@ -58,11 +57,7 @@ hi MatchParen cterm=bold ctermbg=none ctermfg=none
 set viminfo+=n~/.vim/viminfo
 " swap files and autosave
 set noswapfile
-autocmd CursorHold,BufLeave * update
-set updatetime=500
-" faster shift+O recognition in insert mode
-" arrow keys can no longer be used in insert mode however
-set noesckeys
+autocmd TextChanged * update
 
 " file types
 autocmd FileType make setlocal noexpandtab

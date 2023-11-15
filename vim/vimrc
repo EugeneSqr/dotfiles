@@ -108,6 +108,7 @@ function! ToggleGDiff()
     if buflisted(bufname('.git//?'))
         bd .git//?
     else
+        only
         Gdiff
     endif
 endfunction

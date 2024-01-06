@@ -97,16 +97,16 @@ let $FZF_DEFAULT_OPTS="--bind ctrl-k:preview-up,ctrl-j:preview-down,
 " vim-fugitive
 set diffopt +=vertical
 function! ToggleGStatus()
-    if buflisted(bufname('.git//'))
-        bd .git//
+    if buflisted(bufname('.git*//'))
+        bd .git*//
     else
         G
         normal! 6G
     endif
 endfunction
 function! ToggleGDiff()
-    if buflisted(bufname('.git//?'))
-        bd .git//?
+    if buflisted(bufname('.git*//?'))
+        bd .git*//?
     else
         only
         Gdiff

@@ -19,6 +19,7 @@ Install all of these using your OS's package manager
 * ripgrep
 * ctags
 * ptpython (pipx install ptpython)
+* imagemagick
 * Yandex Disk
 
 ## Setting up the environment

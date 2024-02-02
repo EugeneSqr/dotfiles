@@ -52,7 +52,5 @@ alias src="cd $HOME/Documents/sources"
 alias tms="tmux_run start"
 alias tme="tmux_run end"
 
-alias jpgreduce="mogrify -quality 40"
-
 # fuzzy find
 export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude .git"

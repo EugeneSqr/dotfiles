@@ -17,6 +17,7 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'junegunn/fzf.vim'
 Plugin 'vim-test/vim-test'
 Plugin 'SirVer/ultisnips'
+Plugin 'davidhalter/jedi-vim'
 Plugin 'eugenesqr/vim-arg-wrap'
 Plugin 'eugenesqr/molokai'
 call vundle#end()
@@ -144,6 +145,9 @@ nnoremap <leader>J :WrapArgsBack<cr>
 let g:vimwiki_global_ext = 0
 let g:vimwiki_list = [{'path': '~/Documents/private/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
+
+# jedi-vim
+let g:jedi#popup_on_dot = 0
 
 " run commands silently (returns back to vim right after command completion)
 " usage example with binding :Silent !ls

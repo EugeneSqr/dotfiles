@@ -148,6 +148,7 @@ let g:vimwiki_list = [{'path': '~/Documents/private/',
 
 " jedi-vim
 let g:jedi#popup_on_dot = 0
+let g:jedi#show_call_signatures = 0
 
 " run commands silently (returns back to vim right after command completion)
 " usage example with binding :Silent !ls

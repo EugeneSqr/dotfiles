@@ -146,7 +146,7 @@ let g:vimwiki_global_ext = 0
 let g:vimwiki_list = [{'path': '~/Documents/private/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 
-# jedi-vim
+" jedi-vim
 let g:jedi#popup_on_dot = 0
 
 " run commands silently (returns back to vim right after command completion)

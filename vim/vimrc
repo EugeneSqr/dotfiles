@@ -90,7 +90,7 @@ let xml_syntax_folding=1
 nnoremap <leader>k :Files!<CR>
 nnoremap <leader>; :Buffers!<CR>
 nnoremap <leader>f :Rg!<space>
-nnoremap <leader>s :GFiles!?<CR>
+nnoremap <leader>S :GFiles!?<CR>
 " fzf preview window scrolling like in vim
 let $FZF_DEFAULT_OPTS="--bind ctrl-k:preview-up,ctrl-j:preview-down,
 \ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down"
@@ -113,7 +113,7 @@ function! ToggleGDiff()
         Gdiff
     endif
 endfunction
-nnoremap <leader>g :call ToggleGStatus()<CR>
+nnoremap <leader>s :call ToggleGStatus()<CR>
 nnoremap <leader>d :call ToggleGDiff()<CR>
 augroup custom_fugitive_mappings
     " delete custom_fugitive_mappings to avoid double runs
@@ -149,6 +149,10 @@ let g:vimwiki_list = [{'path': '~/Documents/private/',
 " jedi-vim
 let g:jedi#popup_on_dot = 0
 let g:jedi#show_call_signatures = 0
+let g:jedi#goto_command = "<leader>g"
+let g:jedi#goto_assignments_command = "<leader>Gg"
+let g:jedi#goto_stubs_command = "<leader>Gs"
+let g:jedi#usages_command = "<leader>Gu"
 
 " run commands silently (returns back to vim right after command completion)
 " usage example with binding :Silent !ls

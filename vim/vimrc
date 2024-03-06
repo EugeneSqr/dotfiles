@@ -86,6 +86,11 @@ set foldlevelstart=1
 
 let xml_syntax_folding=1
 
+" delete current buffer keeping the split
+nnoremap <leader>bd :bp\|bd#<CR>
+" delete all buffers but the current one
+nnoremap <leader>bD :%bd\|e#<CR>
+
 " fzf.vim
 nnoremap <leader>k :Files!<CR>
 nnoremap <leader>; :Buffers!<CR>

@@ -1,14 +1,17 @@
 [core]
     editor=vim
-    autocrlf = input
+    autocrlf=input
 [diff]
     tool=vimdiff
-    submodule = log
+    submodule=log
+[merge]
+    tool=vimdiff
+    conflictstyle=diff3
 [status]
-    submodulesummary = 1
+    submodulesummary=1
 [push]
-	recurseSubmodules = check
+	recurseSubmodules=check
 [pull]
-	rebase = false
+	rebase=false
 [color]
     ui=true

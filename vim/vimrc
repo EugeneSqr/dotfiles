@@ -143,6 +143,7 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_symbols.maxlinenr= ''
 let g:airline_symbols.colnr= ':'
+let g:airline#extensions#branch#displayed_head_limit = 15
 
 " vim-arg-wrap
 nnoremap <leader>j :WrapArgs<cr>

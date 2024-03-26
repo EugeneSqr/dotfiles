@@ -11,8 +11,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
-Plugin 'jenterkin/vim-autosource'
 Plugin 'airblade/vim-rooter'
+Plugin 'embear/vim-localvimrc'
 Plugin 'vimwiki/vimwiki'
 Plugin 'junegunn/fzf.vim'
 Plugin 'vim-test/vim-test'
@@ -127,8 +127,10 @@ augroup custom_fugitive_mappings
     au User FugitiveIndex nnoremap <buffer> A :Git add .<cr>
 augroup END
 
-" vim-autosource and vim-rooter
-let g:autosource_conf_names = ['.vimproject']
+" vim-localvimrc and vim-rooter
+let g:localvimrc_name = ['.vimproject']
+let g:localvimrc_ask= 0
+let g:localvimrc_sandbox = 0
 let g:rooter_patterns = ['.vimproject']
 autocmd BufRead,BufNewFile .vimproject set syntax=vim
 

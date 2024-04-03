@@ -16,3 +16,4 @@ mkdir -p "$HOME_LOCAL_BIN"
 . ./setup/setup-run-or-raise.sh
 . ./setup/setup-ctags.sh
 . ./setup/setup-ptpython.sh
+. ./setup/setup-zathura.sh

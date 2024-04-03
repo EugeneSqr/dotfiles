@@ -6,7 +6,7 @@ Install all of these using your OS's package manager
 * vim
 * mutt
 * lynx
-* mupdf
+* zathura (with zathura-pdf-mupdf)
 * xfce4-terminal
 * tmux
 * xclip

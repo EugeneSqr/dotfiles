@@ -167,6 +167,9 @@ let g:jedi#goto_assignments_command = "<leader>Gg"
 let g:jedi#goto_stubs_command = "<leader>Gs"
 let g:jedi#usages_command = "<leader>Gu"
 
+" vim-test
+nnoremap <leader>t :w<CR> :TestNearest<CR>
+
 " run commands silently (returns back to vim right after command completion)
 " usage example with binding :Silent !ls
 " nnoremap <silent> <leader>vv :Silent :grep -ir <cword> ./<CR>:cw<CR>

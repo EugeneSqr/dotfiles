@@ -160,7 +160,7 @@ let g:vimwiki_list = [{'path': '~/Documents/private/',
 " jedi-vim
 let g:jedi#popup_on_dot = 0
 let g:jedi#show_call_signatures = 2 "make sure to set noshowmode for it to work
-let g:jedi#show_call_signatures_delay = 0
+let g:jedi#show_call_signatures_delay = 1000 "smaller values cause flickering on familiar signatures
 let g:jedi#completions_command = "<C-n>"
 let g:jedi#goto_command = "<leader>g"
 let g:jedi#goto_assignments_command = "<leader>Gg"

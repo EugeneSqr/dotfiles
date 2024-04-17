@@ -77,9 +77,6 @@ nnoremap <C-]> g<C-]>
 nnoremap <F5> :setlocal spell! spelllang=en_us<CR>
 nnoremap <F6> :setlocal spell! spelllang=ru_ru<CR>
 
-" switch windows
-nnoremap <silent> <Tab> :wincmd w<CR>
-
 " folding
 set foldmethod=manual
 set foldlevelstart=1
@@ -137,7 +134,7 @@ autocmd BufRead,BufNewFile .vimproject set syntax=vim
 " Airline
 " displaying mode in command line is redundant with airline
 " hiding it enables jedi-vim to display function signatures in command line
-set noshowmode 
+set noshowmode
 let g:airline_theme='molokai'
 let g:airline_powerline_fonts = 1
 let g:airline_detect_modified = 0

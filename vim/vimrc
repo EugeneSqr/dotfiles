@@ -18,6 +18,7 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'vim-test/vim-test'
 Plugin 'SirVer/ultisnips'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'powerman/vim-plugin-autosess'
 Plugin 'eugenesqr/vim-arg-wrap'
 Plugin 'eugenesqr/molokai'
 call vundle#end()

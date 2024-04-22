@@ -4,12 +4,13 @@ set -e
 cmd=${1-"start"}
 
 session_name=base
+wiki_path="${HOME}/Documents/private/index.md"
 if [ "$cmd" = 'start' ]; then
     primary_window_name=primary
     if ! tmux has-session -t "=$session_name" 2> /dev/null; then
         tmux new-session -d -s "$session_name" -n "$primary_window_name"
         tmux new-window -t "=$session_name" -n 'secondary'
-        tmux new-window -t "=$session_name" -n 'wiki' 'vim -c VimwikiIndex'
+        tmux new-window -t "=$session_name" -n 'wiki' "vim $wiki_path"
         tmux new-window -t "=$session_name" -n 'ssh_primary'
         tmux new-window -t "=$session_name" -n 'ssh_secondary'
         tmux new-window -t "=$session_name" -n 'cmus' 'cmus'

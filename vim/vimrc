@@ -19,6 +19,7 @@ Plugin 'vim-test/vim-test'
 Plugin 'SirVer/ultisnips'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'powerman/vim-plugin-autosess'
+Plugin 'lyokha/vim-xkbswitch'
 Plugin 'eugenesqr/vim-arg-wrap'
 Plugin 'eugenesqr/molokai'
 call vundle#end()
@@ -168,6 +169,9 @@ let g:jedi#usages_command = "<leader>Gu"
 " vim-test
 nnoremap <leader>t :w<CR> :TestNearest<CR>
 let test#python#pytest#options = '-svx'
+
+" vim-xkbswitch
+let g:XkbSwitchEnabled = 1
 
 " run commands silently (returns back to vim right after command completion)
 " usage example with binding :Silent !ls

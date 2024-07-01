@@ -36,7 +36,11 @@ fi)'$Reset$PS1
 alias vi='vim -o `fzf`'
 
 alias ll="ls -la --color --human-readable --group-directories-first"
-alias lt="tree -a --dirsfirst --filelimit 30 -L 2 -C"
+show_project_tree() {
+    # use rg to exclude files in .gitignore, useful for examining project structure
+    rg --files --hidden -g '!.git' "${1:-.}" | tree --fromfile --dirsfirst -C
+}
+alias lt="show_project_tree"
 
 alias grep="grep --color"
 

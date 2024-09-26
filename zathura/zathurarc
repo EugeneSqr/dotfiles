@@ -1,3 +1,6 @@
 # start maximized
 set window-height 3000
 set window-width 3000
+
+# allow copy to clipboard
+set selection-clipboard clipboard

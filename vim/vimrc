@@ -154,6 +154,7 @@ nnoremap <leader>J :WrapArgsBack<cr>
 
 " vimwiki
 let g:vimwiki_global_ext = 0
+let g:vimwiki_dir_link = 'index'
 let g:vimwiki_list = [{'path': '~/Documents/private/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 

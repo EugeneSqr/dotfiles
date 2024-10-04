@@ -17,11 +17,15 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'junegunn/fzf.vim'
 Plugin 'vim-test/vim-test'
 Plugin 'SirVer/ultisnips'
-Plugin 'davidhalter/jedi-vim'
 Plugin 'powerman/vim-plugin-autosess'
 Plugin 'lyokha/vim-xkbswitch'
 Plugin 'eugenesqr/vim-arg-wrap'
 Plugin 'eugenesqr/molokai'
+Plugin 'prabirshrestha/async.vim'
+Plugin 'prabirshrestha/vim-lsp'
+Plugin 'prabirshrestha/asyncomplete.vim'
+Plugin 'prabirshrestha/asyncomplete-lsp.vim'
+Plugin 'mattn/vim-lsp-settings'
 call vundle#end()
 filetype plugin indent on     " required!
 
@@ -135,7 +139,6 @@ autocmd BufRead,BufNewFile .vimproject set syntax=vim
 
 " Airline
 " displaying mode in command line is redundant with airline
-" hiding it enables jedi-vim to display function signatures in command line
 set noshowmode
 let g:airline_theme='molokai'
 let g:airline_powerline_fonts = 1
@@ -147,6 +150,8 @@ let g:airline_symbols.maxlinenr= ''
 let g:airline_symbols.colnr= ':'
 " branch name occupies too much space, disable it in favor of file names
 let g:airline#extensions#branch#enabled = 0
+" LSP errors are too distracting
+let g:airline#extensions#lsp#enabled = 0
 
 " vim-arg-wrap
 nnoremap <leader>j :WrapArgs<cr>
@@ -158,22 +163,28 @@ let g:vimwiki_dir_link = 'index'
 let g:vimwiki_list = [{'path': '~/Documents/private/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 
-" jedi-vim
-let g:jedi#popup_on_dot = 0
-let g:jedi#show_call_signatures = 2 "make sure to set noshowmode for it to work
-let g:jedi#show_call_signatures_delay = 1000 "smaller values cause flickering on familiar signatures
-let g:jedi#completions_command = "<C-n>"
-let g:jedi#goto_command = "<leader>g"
-let g:jedi#goto_assignments_command = "<leader>Gg"
-let g:jedi#goto_stubs_command = "<leader>Gs"
-let g:jedi#usages_command = "<leader>Gu"
-
 " vim-test
 nnoremap <leader>t :w<CR> :TestNearest<CR>
 let test#python#pytest#options = '-svx'
 
 " vim-xkbswitch
 let g:XkbSwitchEnabled = 1
+
+" vim-lsp
+let g:lsp_use_native_client = 1
+let g:lsp_diagnostics_signs_enabled = 0
+let g:lsp_diagnostics_virtual_text_enabled = 0
+let g:lsp_diagnostics_highlights_enabled = 0
+let g:lsp_document_code_action_signs_enabled = 0
+nnoremap <leader>g <plug>(lsp-definition)
+nnoremap <leader>Gu <plug>(lsp-references)
+nnoremap <leader>r <plug>(lsp-rename)
+
+" vim-lsp-settings
+let g:lsp_settings_enable_suggestions = 0
+
+" asynccomplete
+let g:asyncomplete_auto_popup = 0
 
 " run commands silently (returns back to vim right after command completion)
 " usage example with binding :Silent !ls

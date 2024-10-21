@@ -24,6 +24,9 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'mattn/vim-lsp-settings'
+" fork of https://github.com/mattn/vim-lsp-settings to fix clangd server
+" istallation until my PR gets accepted
+Plug 'eugenesqr/vim-lsp-settings', { 'branch': 'fix_clangd_installation_with_local_clang' }
 call plug#end()
 
 let mapleader=","

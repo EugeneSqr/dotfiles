@@ -16,10 +16,11 @@ if [ ! -f "$spell_dir/ru.utf-8.spl" ]; then
     ln -sf "$dotfiles_dir/vim/spell/en.utf-8.add" "$spell_dir/en.utf-8.add"
 fi
 
-# Vundle + plugins
-if [ ! -d ~/.vim/bundle ]; then
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    vim +PluginInstall +qall
+# Plug + plugins
+if [ ! -d ~/.vim/autoload ]; then
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    vim +PlugInstall +qall
 fi
 
 # ultisnips snippets

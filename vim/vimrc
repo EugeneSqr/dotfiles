@@ -1,33 +1,30 @@
 set nocompatible              " be iMproved
-" Vundle
-filetype off                  " required!
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'vim-scripts/bats.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-rooter'
-Plugin 'embear/vim-localvimrc'
-Plugin 'vimwiki/vimwiki'
-Plugin 'junegunn/fzf.vim'
-Plugin 'vim-test/vim-test'
-Plugin 'SirVer/ultisnips'
-Plugin 'powerman/vim-plugin-autosess'
-Plugin 'lyokha/vim-xkbswitch'
-Plugin 'eugenesqr/vim-arg-wrap'
-Plugin 'eugenesqr/molokai'
-Plugin 'prabirshrestha/async.vim'
-Plugin 'prabirshrestha/vim-lsp'
-Plugin 'prabirshrestha/asyncomplete.vim'
-Plugin 'prabirshrestha/asyncomplete-lsp.vim'
-Plugin 'mattn/vim-lsp-settings'
-call vundle#end()
-filetype plugin indent on     " required!
+" Plug
+call plug#begin()
+Plug 'VundleVim/Vundle.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'vim-scripts/bats.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-rooter'
+Plug 'embear/vim-localvimrc'
+Plug 'vimwiki/vimwiki'
+Plug 'junegunn/fzf.vim'
+Plug 'vim-test/vim-test'
+Plug 'SirVer/ultisnips'
+Plug 'powerman/vim-plugin-autosess'
+Plug 'lyokha/vim-xkbswitch'
+Plug 'eugenesqr/vim-arg-wrap'
+Plug 'eugenesqr/molokai'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'mattn/vim-lsp-settings'
+call plug#end()
 
 let mapleader=","
 

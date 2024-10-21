@@ -95,7 +95,10 @@ nnoremap <leader>bd :bp\|bd#<CR>
 nnoremap <leader>bD :%bd\|e#<CR>
 
 " fzf.vim
+" list files from the root of the project
 nnoremap <leader>k :Files!<CR>
+" list files in the current buffer's directory only
+nnoremap <leader>K :Files! %:h<CR>
 nnoremap <leader>; :Buffers!<CR>
 nnoremap <leader>f :Rg!<space>
 nnoremap <leader>S :GFiles!?<CR>

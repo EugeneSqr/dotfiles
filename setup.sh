@@ -14,6 +14,5 @@ mkdir -p "$HOME_LOCAL_BIN"
 . ./setup/setup-xfce4-terminal.sh
 . ./setup/setup-tmux.sh
 . ./setup/setup-run-or-raise.sh
-. ./setup/setup-ctags.sh
 . ./setup/setup-ptpython.sh
 . ./setup/setup-zathura.sh

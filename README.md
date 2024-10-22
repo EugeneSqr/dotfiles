@@ -17,7 +17,6 @@ Install all of these using your OS's package manager
 * fd
 * bat
 * ripgrep
-* ctags
 * ptpython (pipx install ptpython)
 * xkb-switch
 * Yandex Disk

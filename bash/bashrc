@@ -46,10 +46,10 @@ alias grep="grep --color"
 
 alias gs="git status --short"
 alias gl="git log --oneline"
-alias gla="git log --all --decorate --oneline --graph"
 alias gd="git diff"
 alias ga="git add ."
 alias gp="git remote prune origin"
+alias gb="git branch -v"
 
 alias dwn="cd $HOME/Downloads"
 alias src="cd $HOME/Documents/sources"

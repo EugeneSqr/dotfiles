@@ -13,6 +13,7 @@
     submodulesummary=1
 [push]
 	recurseSubmodules=check
+    autoSetupRemote=true
 [pull]
 	rebase=false
 [color]

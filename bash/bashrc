@@ -47,8 +47,11 @@ alias grep="grep --color"
 alias gs="git status --short"
 alias gl="git log --oneline"
 alias gd="git diff"
-alias gp="git remote prune origin"
+alias gp="git pull"
+alias gpr="git remote prune origin"
 alias gb="git branch -v"
+# master or main
+alias gm='git checkout $(git symbolic-ref refs/remotes/origin/HEAD | cut -d"/" -f4)'
 # aliases can't use parameters directly
 git_rebase_last() {
     git rebase -i HEAD~"${1:-2}"

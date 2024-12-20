@@ -32,15 +32,14 @@ if [ $? -eq 0 ]; then \
     fi) "; \
 fi)'$Reset$PS1
 
-# aliases
+# aliases (remember they can't use parameters directly, consider using functions instead)
 alias vi='vim -o `fzf`'
 
 alias ll="ls -la --color --human-readable --group-directories-first"
-show_project_tree() {
+lt() {
     # use rg to exclude files in .gitignore, useful for examining project structure
     rg --files --hidden -g '!.git' "${1:-.}" | tree --fromfile --dirsfirst -C
 }
-alias lt="show_project_tree"
 
 alias grep="grep --color"
 
@@ -52,11 +51,9 @@ alias gpr="git remote prune origin"
 alias gb="git branch -v"
 # master or main
 alias gm='git checkout $(git symbolic-ref refs/remotes/origin/HEAD | cut -d"/" -f4)'
-# aliases can't use parameters directly
-git_rebase_last() {
+gr() {
     git rebase -i HEAD~"${1:-2}"
 }
-alias gr="git_rebase_last"
 alias gmgp="gm && gp"
 
 alias dwn="cd $HOME/Downloads"

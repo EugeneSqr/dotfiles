@@ -57,6 +57,7 @@ git_rebase_last() {
     git rebase -i HEAD~"${1:-2}"
 }
 alias gr="git_rebase_last"
+alias gmgp="gm && gp"
 
 alias dwn="cd $HOME/Downloads"
 alias src="cd $HOME/Documents/sources"

@@ -71,6 +71,8 @@ autocmd FileType html setlocal shiftwidth=2 tabstop=2
 set incsearch
 set ignorecase
 set hlsearch
+" show pattern matches count
+set shortmess-=S
 nnoremap ,<space> :nohlsearch<CR>
 
 " go to tag (single match), present list otherwise

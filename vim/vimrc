@@ -178,6 +178,7 @@ let g:lsp_diagnostics_signs_enabled = 0
 let g:lsp_diagnostics_virtual_text_enabled = 0
 let g:lsp_diagnostics_highlights_enabled = 0
 let g:lsp_document_code_action_signs_enabled = 0
+let g:lsp_signature_help_enabled = 0
 nnoremap <leader>g <plug>(lsp-definition)
 nnoremap <leader>Gu <plug>(lsp-references)
 nnoremap <leader>r <plug>(lsp-rename)

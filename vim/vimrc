@@ -187,8 +187,3 @@ let g:lsp_settings_enable_suggestions = 0
 
 " asynccomplete
 let g:asyncomplete_auto_popup = 0
-
-" run commands silently (returns back to vim right after command completion)
-" usage example with binding :Silent !ls
-" nnoremap <silent> <leader>vv :Silent :grep -ir <cword> ./<CR>:cw<CR>
-command! -nargs=+ Silent execute 'silent <args>' | redraw!

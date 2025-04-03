@@ -128,8 +128,8 @@ nnoremap <leader>d :call ToggleGDiff()<CR>
 augroup custom_fugitive_mappings
     " delete custom_fugitive_mappings to avoid double runs
     au!
-    " map 'A' to stage all in git status window
-    au User FugitiveIndex nnoremap <buffer> A :Git add .<cr>
+    " map 'S' to stage all in git status window
+    au User FugitiveIndex nnoremap <buffer> S :Git add .<cr>
 augroup END
 
 " vim-localvimrc and vim-rooter

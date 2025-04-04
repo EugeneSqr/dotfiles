@@ -100,7 +100,7 @@ nnoremap <leader>k :Files!<CR>
 nnoremap <leader>K :Files! %:h<CR>
 nnoremap <leader>; :Jumps!<CR>
 nnoremap <leader>f :Rg!<space>
-nnoremap <leader>S :GFiles!?<CR>
+nnoremap <leader>d :GFiles!?<CR>
 " fzf larger preview for two-side-diffs
 let g:fzf_vim = {}
 let g:fzf_vim.preview_window = ['up,70%', 'ctrl-/']
@@ -118,16 +118,7 @@ function! ToggleGStatus()
         normal! 6G
     endif
 endfunction
-function! ToggleGDiff()
-    if buflisted(bufname('.git*//?'))
-        bd .git*//?
-    else
-        only
-        Gdiff
-    endif
-endfunction
 nnoremap <leader>s :call ToggleGStatus()<CR>
-nnoremap <leader>d :call ToggleGDiff()<CR>
 augroup custom_fugitive_mappings
     " delete custom_fugitive_mappings to avoid double runs
     au!

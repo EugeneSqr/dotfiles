@@ -101,6 +101,9 @@ nnoremap <leader>K :Files! %:h<CR>
 nnoremap <leader>; :Jumps!<CR>
 nnoremap <leader>f :Rg!<space>
 nnoremap <leader>S :GFiles!?<CR>
+" fzf larger preview for two-side-diffs
+let g:fzf_vim = {}
+let g:fzf_vim.preview_window = ['up,70%', 'ctrl-/']
 " fzf preview window scrolling like in vim
 let $FZF_DEFAULT_OPTS="--bind ctrl-k:preview-up,ctrl-j:preview-down,
 \ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down"

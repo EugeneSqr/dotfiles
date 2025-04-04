@@ -98,7 +98,7 @@ nnoremap <leader>bD :%bd\|e#<CR>
 nnoremap <leader>k :Files!<CR>
 " list files in the current buffer's directory only
 nnoremap <leader>K :Files! %:h<CR>
-nnoremap <leader>; :Buffers!<CR>
+nnoremap <leader>; :Jumps!<CR>
 nnoremap <leader>f :Rg!<space>
 nnoremap <leader>S :GFiles!?<CR>
 " fzf preview window scrolling like in vim

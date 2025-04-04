@@ -1,6 +1,7 @@
 [core]
     editor=vim
     autocrlf=input
+    pager = delta
 [diff]
     tool=vimdiff
     submodule=log
@@ -18,3 +19,6 @@
 	rebase=false
 [color]
     ui=true
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    side-by-side = true

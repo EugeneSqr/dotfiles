@@ -14,6 +14,7 @@ Install all of these using your OS's package manager
 * tree
 * grc
 * fzf
+* git-delta
 * fd
 * bat
 * ripgrep

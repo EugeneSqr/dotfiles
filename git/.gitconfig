@@ -1,7 +1,7 @@
 [core]
     editor=vim
     autocrlf=input
-    pager = delta
+    pager=delta
 [diff]
     tool=vimdiff
     submodule=log
@@ -20,7 +20,7 @@
 [color]
     ui=true
 [delta]
-    navigate = true  # use n and N to move between diff sections
-    side-by-side = true
+    navigate=true  # use n and N to move between diff sections
+    side-by-side=true
 [interactive]
-    diffFilter = delta --color-only
+    diffFilter=delta --color-only

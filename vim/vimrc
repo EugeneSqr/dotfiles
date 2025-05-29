@@ -101,6 +101,9 @@ nnoremap <leader>K :Files! %:h<CR>
 nnoremap <leader>; :Buffers!<CR>
 nnoremap <leader>f :Rg!<space>
 nnoremap <leader>d :GFiles!?<CR>
+" quickfix navigation
+nnoremap <leader>ln :cn<CR>
+nnoremap <leader>lp :cp<CR>
 " fzf larger preview for two-side-diffs
 let g:fzf_vim = {}
 let g:fzf_vim.preview_window = ['up,70%', 'ctrl-/']

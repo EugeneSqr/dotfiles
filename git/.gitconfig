@@ -9,14 +9,14 @@
     tool=vimdiff
     conflictstyle=zdiff3
 [mergetool]
-	keepBackup=false
+    keepBackup=false
 [status]
     submodulesummary=1
 [push]
-	recurseSubmodules=check
+    recurseSubmodules=check
     autoSetupRemote=true
 [pull]
-	rebase=false
+    rebase=false
 [color]
     ui=true
 [delta]

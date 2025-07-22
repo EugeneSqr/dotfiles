@@ -6,13 +6,15 @@ cmd=${1-"start"}
 session_name=base
 wiki_path="${HOME}/Documents/private/index.md"
 if [ "$cmd" = 'start' ]; then
-    primary_window_name=primary
+    primary_window_name=code_1
     if ! tmux has-session -t "=$session_name" 2> /dev/null; then
         tmux new-session -d -s "$session_name" -n "$primary_window_name"
-        tmux new-window -t "=$session_name" -n 'secondary'
-        tmux new-window -t "=$session_name" -n 'wiki' "vim $wiki_path"
+        tmux new-window -t "=$session_name" -n 'code_2'
+        tmux new-window -t "=$session_name" -n 'code_3'
+        tmux new-window -t "=$session_name" -n 'code_4'
         tmux new-window -t "=$session_name" -n 'ssh_primary'
         tmux new-window -t "=$session_name" -n 'ssh_secondary'
+        tmux new-window -t "=$session_name" -n 'wiki' "vim $wiki_path"
         tmux new-window -t "=$session_name" -n 'cmus' 'cmus'
         tmux select-window -t "=$primary_window_name"
     fi

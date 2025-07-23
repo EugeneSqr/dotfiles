@@ -34,11 +34,12 @@ fi)'$Reset$PS1
 
 # aliases (remember they can't use parameters directly, consider using functions instead)
 alias vi='vim -o `fzf`'
-
-alias ll="ls -la --color --human-readable --group-directories-first"
+ll() {
+    ls -la --color --human-readable --group-directories-first "${1:-.}" | more
+}
 lt() {
     # use rg to exclude files in .gitignore, useful for examining project structure
-    rg --files --hidden -g '!.git' "${1:-.}" | tree --fromfile --dirsfirst -C
+    rg --files --hidden -g '!.git' "${1:-.}" | tree --fromfile --dirsfirst -C | more
 }
 
 alias grep="grep --color"

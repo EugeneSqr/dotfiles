@@ -32,8 +32,9 @@ if [ $? -eq 0 ]; then \
     fi) "; \
 fi)'$Reset$PS1
 
-# aliases (remember they can't use parameters directly, consider using functions instead)
-alias vi='vim -o `fzf`'
+# ALIASES
+# remember aliases they can't use parameters, consider using functions instead
+alias vi='vim -O `fzf`'
 ll() {
     ls -la --color --human-readable --group-directories-first "${1:-.}" | more
 }

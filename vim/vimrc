@@ -99,7 +99,23 @@ nnoremap <leader>k :Files!<CR>
 " list files in the current buffer's directory only
 nnoremap <leader>K :Files! %:h<CR>
 nnoremap <leader>; :Buffers!<CR>
-nnoremap <leader>f :Rg!<space>
+" text search
+function! TextSearchCWD()
+    " search text in CWD files (recursive)
+    execute "Rg! ".input("rg (cwd): ")
+endfunction
+function! TextSearchLocal()
+    " serch text in current buffer's directory files (recursive)
+    let cwd = getcwd()
+    let search_dir = expand("%:p:h")
+    let search_pattern = input("rg (local): ")
+    execute "lcd ".search_dir
+    execute "Rg! ".search_pattern
+    execute "lcd ".cwd
+endfunction
+nnoremap <leader>f :call TextSearchCWD()<CR>
+nnoremap <leader>F :call TextSearchLocal()<CR>
+
 nnoremap <leader>d :GFiles!?<CR>
 " quickfix navigation
 nnoremap <leader>LL :cn<CR>

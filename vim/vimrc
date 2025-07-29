@@ -88,24 +88,25 @@ set foldlevelstart=1
 
 let xml_syntax_folding=1
 
-" delete current buffer keeping the split
+" unload current buffer without closing the window
 nnoremap <leader>bd :bp\|bd#<CR>
-" delete all buffers but the current one
+" unload all buffers except the current one
 nnoremap <leader>bD :%bd\|e#<CR>
 
 " fzf.vim
-" list files from the root of the project
+" list files in CWD
 nnoremap <leader>k :Files!<CR>
-" list files in the current buffer's directory only
+" list files in the current buffer's directory
 nnoremap <leader>K :Files! %:h<CR>
-nnoremap <leader>; :Buffers!<CR>
+" list previously opened files (buffers)
+nnoremap <leader>p :Buffers!<CR>
 " text search
 function! TextSearchCWD()
     " search text in CWD files (recursive)
     execute "Rg! ".input("rg (cwd): ")
 endfunction
 function! TextSearchLocal()
-    " serch text in current buffer's directory files (recursive)
+    " serch text in the current buffer's directory files (recursive)
     let cwd = getcwd()
     let search_dir = expand("%:p:h")
     let search_pattern = input("rg (local): ")

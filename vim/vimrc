@@ -73,10 +73,11 @@ set ignorecase
 set hlsearch
 " show pattern matches count
 set shortmess-=S
-nnoremap ,<space> :nohlsearch<CR>
 
-" go to tag (single match), present list otherwise
-nnoremap <C-]> g<C-]>
+" discart unsaved buffers (usually temp ones) and quit. Don't use without autosave.
+nnoremap ZZ :qa!<CR>
+
+nnoremap ,<space> :nohlsearch<CR>
 
 " spellcheck (make sure Russian dictionary is set up)
 nnoremap <F5> :setlocal spell! spelllang=en_us<CR>
@@ -117,16 +118,20 @@ endfunction
 nnoremap <leader>f :call TextSearchCWD()<CR>
 nnoremap <leader>F :call TextSearchLocal()<CR>
 
-nnoremap <leader>d :GFiles!?<CR>
+" fzf preview window vim-like scrolling
+let $FZF_DEFAULT_OPTS="--bind ctrl-k:preview-up,
+            \ctrl-j:preview-down,
+            \ctrl-u:preview-half-page-up,
+            \ctrl-d:preview-half-page-down"
+" fzf horizontal preview window for side-by-side diffs
+nnoremap <leader>d :call fzf#vim#gitfiles(
+            \'?',
+            \fzf#vim#with_preview({"placeholder": ""}, 'up,70%', 'ctrl-/'),
+            \v:true)<CR>
+
 " quickfix navigation
 nnoremap <leader>LL :cn<CR>
 nnoremap <leader>Ll :cp<CR>
-" fzf larger preview for two-side-diffs
-let g:fzf_vim = {}
-let g:fzf_vim.preview_window = ['up,70%', 'ctrl-/']
-" fzf preview window scrolling like in vim
-let $FZF_DEFAULT_OPTS="--bind ctrl-k:preview-up,ctrl-j:preview-down,
-\ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down"
 
 " vim-fugitive
 set diffopt +=vertical

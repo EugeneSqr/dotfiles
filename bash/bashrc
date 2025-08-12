@@ -40,8 +40,8 @@ ll() {
     ls -la --color --human-readable --group-directories-first "${1:-.}" | more
 }
 lt() {
-    # use rg to exclude files in .gitignore, useful for examining project structure
-    rg --files --hidden -g '!.git' "${1:-.}" | tree --fromfile --dirsfirst -C | more
+    # use fd to exclude files in .gitignore, useful for examining project structure
+    fd . --type f --hidden --exclude .git "${1:-.}" | tree --fromfile --dirsfirst -C | more
 }
 
 alias grep="grep --color"
@@ -91,5 +91,8 @@ ctrl-u:preview-half-page-up,\
 ctrl-d:preview-half-page-down"
 alias vi='vim -O `fzf --preview "bat --style=-numbers --color=always {}"`'
 cdf () {
-    cd $(FZF_DEFAULT_COMMAND="fd --type d --hidden --exclude .git" fzf --preview "tree -C {}")
+    target=$( (echo '.'; fd --type d --hidden --exclude .git) | fzf --preview "fd . --type f --hidden --exclude .git {} | tree --fromfile --dirsfirst -C")
+    if [ -n "$target" ]; then
+        cd $target
+    fi
 }

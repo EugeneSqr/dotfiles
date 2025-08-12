@@ -118,11 +118,6 @@ endfunction
 nnoremap <leader>f :call TextSearchCWD()<CR>
 nnoremap <leader>F :call TextSearchLocal()<CR>
 
-" fzf preview window vim-like scrolling
-let $FZF_DEFAULT_OPTS="--bind ctrl-k:preview-up,
-            \ctrl-j:preview-down,
-            \ctrl-u:preview-half-page-up,
-            \ctrl-d:preview-half-page-down"
 " fzf horizontal preview window for side-by-side diffs
 nnoremap <leader>d :call fzf#vim#gitfiles(
             \'?',

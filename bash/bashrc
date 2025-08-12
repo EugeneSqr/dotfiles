@@ -36,8 +36,8 @@ fi)'$Reset$PS1
 
 # ALIASES
 # remember aliases they can't use parameters, consider using functions instead
-alias fzf='fzf --preview "bat --style=-numbers --color=always {}"'
-alias vi='vim -O `fzf`'
+alias ff='fzf --preview "bat --style=-numbers --color=always {}"'
+alias vi='vim -O `ff`'
 ll() {
     ls -la --color --human-readable --group-directories-first "${1:-.}" | more
 }

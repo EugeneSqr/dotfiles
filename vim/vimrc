@@ -124,10 +124,6 @@ nnoremap <leader>d :call fzf#vim#gitfiles(
             \fzf#vim#with_preview({"placeholder": ""}, 'up,70%', 'ctrl-/'),
             \v:true)<CR>
 
-" quickfix navigation
-nnoremap <leader>LL :cn<CR>
-nnoremap <leader>Ll :cp<CR>
-
 " vim-fugitive
 set diffopt +=vertical
 function! ToggleGStatus()

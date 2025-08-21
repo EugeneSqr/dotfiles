@@ -45,6 +45,7 @@ lt() {
 }
 
 alias grep="grep --color"
+alias bat="bat -pp"
 
 alias gs="git status --short"
 alias gl="git log --oneline"

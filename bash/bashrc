@@ -43,6 +43,13 @@ lt() {
     # use fd to exclude files in .gitignore, useful for examining project structure
     fd . --type f --hidden --exclude .git "${1:-.}" | tree --fromfile --dirsfirst -C | more
 }
+# look around in an unfamilar directory with combination of fzf and tree
+llf () {
+    target=$( (echo '.'; fd --type d --hidden --exclude .git) | fzf --preview "fd . --type f --hidden --exclude .git {} | tree --fromfile --dirsfirst -C")
+    if [ -n "$target" ]; then
+        cd $target
+    fi
+}
 
 alias grep="grep --color"
 alias bat="bat -pp"
@@ -84,6 +91,7 @@ alias tms="tmux_run start"
 alias tme="tmux_run end"
 
 # fuzzy find
+eval "$(fzf --bash)"
 export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude .git"
 # fzf preview window vim-like scrolling
 export FZF_DEFAULT_OPTS="--style full --layout reverse-list --bind ctrl-k:preview-up,\
@@ -91,9 +99,3 @@ ctrl-j:preview-down,\
 ctrl-u:preview-half-page-up,\
 ctrl-d:preview-half-page-down"
 alias vi='vim -O `fzf --preview "bat --style=-numbers --color=always {}"`'
-cdf () {
-    target=$( (echo '.'; fd --type d --hidden --exclude .git) | fzf --preview "fd . --type f --hidden --exclude .git {} | tree --fromfile --dirsfirst -C")
-    if [ -n "$target" ]; then
-        cd $target
-    fi
-}

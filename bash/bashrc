@@ -98,4 +98,9 @@ export FZF_DEFAULT_OPTS="--style full --layout reverse-list --bind ctrl-k:previe
 ctrl-j:preview-down,\
 ctrl-u:preview-half-page-up,\
 ctrl-d:preview-half-page-down"
+export FZF_CTRL_T_OPTS="
+    --preview 'bat --style=numbers --color=always {}'
+    --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+export FZF_ALT_C_OPTS="
+    --preview 'tree --dirsfirst -C {}'"
 alias vi='vim -O `fzf --preview "bat --style=-numbers --color=always {}"`'

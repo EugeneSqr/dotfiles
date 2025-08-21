@@ -62,7 +62,11 @@ hi MatchParen cterm=bold ctermbg=none ctermfg=none
 set viminfo+=n~/.vim/viminfo
 " swap files and autosave
 set noswapfile
-autocmd TextChanged,InsertLeave * update
+" explicitly check for 'modifiable' to prevent error messages from writes to
+" readonly buffers
+autocmd TextChanged,InsertLeave * if &modifiable | update | endif
+" discard unsaved buffers (usually temp ones) and quit. Don't use without autosave
+nnoremap ZZ :qa!<CR>
 
 " file types
 autocmd FileType make setlocal noexpandtab
@@ -74,9 +78,6 @@ set ignorecase
 set hlsearch
 " show pattern matches count
 set shortmess-=S
-
-" discart unsaved buffers (usually temp ones) and quit. Don't use without autosave.
-nnoremap ZZ :qa!<CR>
 
 nnoremap ,<space> :nohlsearch<CR>
 
@@ -96,12 +97,18 @@ nnoremap <leader>bd :bp\|bd#<CR>
 nnoremap <leader>bD :%bd\|e#<CR>
 
 " fzf.vim
+let g:fzf_vim = {}
 " list files in CWD
 nnoremap <leader>k :Files!<CR>
 " list files in the current buffer's directory
 nnoremap <leader>K :Files! %:h<CR>
 " list previously opened files (buffers)
-nnoremap <leader>p :Buffers!<CR>
+nnoremap <leader>p :Buffers<CR>
+" the --layout is set to 'reverse-list' for all fzf commands in bashrc
+" for the 'buffers' command it's is more natural to go from bottom to top,
+" starting from the last opened buffer, hence changing the 'reverse-list'
+" option back to 'default' for this particular command
+let g:fzf_vim.buffers_options = ['--layout', 'default' ]
 " text search
 function! TextSearchCWD()
     " search text in CWD files (recursive)

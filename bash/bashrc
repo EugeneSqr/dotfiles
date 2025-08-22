@@ -75,7 +75,7 @@ gpr() {
             case $yn in
                 [y]* ) git branch -D "$branch"; break;;
                 [n]* ) break;;
-                * ) printf "Please answer y or n.";;
+                * ) printf "Please answer y or n.\n";;
             esac
         done
     done

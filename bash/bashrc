@@ -41,11 +41,11 @@ ll() {
 }
 lt() {
     # use fd to exclude files in .gitignore, useful for examining project structure
-    fd . --type f --hidden --exclude .git "${1:-.}" | tree --fromfile --dirsfirst -C | more
+    fd . --type f --hidden --exclude .git "${1:-.}" | tree --fromfile --dirsfirst -C -a | more
 }
 # look around in an unfamilar directory with combination of fzf and tree
 llf () {
-    target=$( (echo '.'; fd --type d --hidden --exclude .git) | fzf --preview "fd . --type f --hidden --exclude .git {} | tree --fromfile --dirsfirst -C")
+    target=$( (echo '.'; fd --type d --hidden --exclude .git) | fzf --preview "fd . --type f --hidden --exclude .git {} | tree --fromfile --dirsfirst -C -a")
     if [ -n "$target" ]; then
         cd $target
     fi

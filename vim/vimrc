@@ -94,7 +94,11 @@ let xml_syntax_folding=1
 " unload current buffer without closing the window
 nnoremap <leader>bd :bp\|bd#<CR>
 " unload all buffers except the current one
-nnoremap <leader>bD :%bd\|e#<CR>
+nnoremap <leader>bD :%bd\|e#\|vs<CR>
+" open current buffer in all windows
+nnoremap <leader><leader> :let currW = winnr() \|
+    \ exe 'windo ' . bufnr("%") . 'buffer' \|
+    \ exe currW . 'wincmd w'<CR>
 
 " fzf.vim
 let g:fzf_vim = {}
@@ -135,9 +139,9 @@ autocmd FileType qf if (getwininfo(win_getid())[0].loclist != 1) | wincmd J | en
 
 " fzf horizontal preview window for side-by-side diffs
 nnoremap <leader>d :call fzf#vim#gitfiles(
-            \'?',
-            \fzf#vim#with_preview({"placeholder": ""}, 'up,70%', 'ctrl-/'),
-            \v:true)<CR>
+    \'?',
+    \fzf#vim#with_preview({"placeholder": ""}, 'up,70%', 'ctrl-/'),
+    \v:true)<CR>
 
 " vim-fugitive
 set diffopt +=vertical

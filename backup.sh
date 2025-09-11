@@ -1,5 +1,5 @@
 #!/bin/bash
-# What to backup. 
+# What to backup.
 yandex_disk="$HOME/Yandex.Disk"
 documents="$HOME/Documents/private"
 

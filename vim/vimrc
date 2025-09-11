@@ -92,11 +92,11 @@ set foldlevelstart=1
 let xml_syntax_folding=1
 
 " unload current buffer without closing the window
-nnoremap <leader>bd :bp\|bd#<CR>
+nnoremap <silent><leader>bd :bp\|bd#<CR>
 " unload all buffers except the current one
-nnoremap <leader>bD :%bd\|e#\|vs<CR>
+nnoremap <silent><leader>bD :%bd\|e#\|vs<CR>
 " open current buffer in all windows
-nnoremap <leader><leader> :let currW = winnr() \|
+nnoremap <silent><leader><leader> :let currW = winnr() \|
     \ exe 'windo ' . bufnr("%") . 'buffer' \|
     \ exe currW . 'wincmd w'<CR>
 

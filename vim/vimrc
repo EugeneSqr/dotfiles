@@ -67,7 +67,7 @@ set noswapfile
 autocmd TextChanged,InsertLeave * if &modifiable | update | endif
 " discard unsaved buffers (usually temp ones) and quit. Don't use without autosave
 nnoremap <leader>Q :qa!<CR>
-nnoremap <leader>q ZZ<CR>
+nnoremap <leader>q ZZ \| :wincmd p<CR>
 
 " file types
 autocmd FileType make setlocal noexpandtab

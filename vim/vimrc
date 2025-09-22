@@ -67,7 +67,7 @@ set noswapfile
 autocmd TextChanged,InsertLeave * if &modifiable | update | endif
 " discard unsaved buffers (usually temp ones) and quit. Don't use without autosave
 nnoremap <leader>Q :qa!<CR>
-nnoremap <leader>q ZZ \| :wincmd p<CR>
+nnoremap <silent><leader>q ZZ \| :wincmd p<CR>
 
 " file types
 autocmd FileType make setlocal noexpandtab
@@ -154,7 +154,7 @@ function! ToggleGStatus()
         normal! 6G
     endif
 endfunction
-nnoremap <leader>s :call ToggleGStatus()<CR>
+nnoremap <silent><leader>s :call ToggleGStatus()<CR>
 augroup custom_fugitive_mappings
     " delete custom_fugitive_mappings to avoid double runs
     au!

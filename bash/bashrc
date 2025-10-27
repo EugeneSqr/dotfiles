@@ -40,9 +40,23 @@ ll() {
     ls -la --color --human-readable --group-directories-first "${1:-.}" | more
 }
 lt() {
+    directory="."
+    ignore="--ignore"
+    while [[ $# -gt 0 ]]; do
+      case $1 in
+        -I|--no-ignore|--ignore)
+          ignore="$1"
+          shift
+          ;;
+        *)
+          directory="$1"
+          shift
+          ;;
+      esac
+    done
     # use fd to respect .gitignore
     # can be turned off with --no-ignore or -I (similar to fd)
-    fd "${1:---ignore}" --type f --type l --hidden --exclude .git "${2:-.}" | \
+    fd "$ignore" --type f --type l --hidden --exclude .git . "$directory" | \
         tree --fromfile --dirsfirst -C -a | more
 }
 # look around in an unfamilar directory with combination of fd, fzf and tree

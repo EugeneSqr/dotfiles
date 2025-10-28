@@ -40,7 +40,9 @@ ll() {
     ls -la --color --human-readable --group-directories-first "${1:-.}" | more
 }
 lt() {
-    directory="."
+    # use fd to respect .gitignore
+    # can be turned off with --no-ignore or -I (similar to fd)
+    directory=""
     ignore="--ignore"
     while [[ $# -gt 0 ]]; do
       case $1 in
@@ -54,9 +56,11 @@ lt() {
           ;;
       esac
     done
-    # use fd to respect .gitignore
-    # can be turned off with --no-ignore or -I (similar to fd)
-    fd "$ignore" --type f --type l --hidden --exclude .git . "$directory" | \
+    # If directory is empty or undefined, the whole ${directory:+"$directory"} thing
+    # evaluates to the empty string, and since it's not double-quoted,
+    # word splitting removes it entirely. On the other hand, if directory is nonblank,
+    # it gets effectively replaced by "$directory".
+    fd "$ignore" --type f --type l --hidden --exclude .git . ${directory:+"$directory"} | \
         tree --fromfile --dirsfirst -C -a | more
 }
 # look around in an unfamilar directory with combination of fd, fzf and tree

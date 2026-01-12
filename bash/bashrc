@@ -15,8 +15,6 @@ fi
 # input and default editor
 EDITOR=vim
 
-stty -ixon -ixoff
-
 source $dotfiles_dir/bash/grc.bashrc    # colorize some common commands
 # colorize git command line
 source $dotfiles_dir/bash/git-prompt.sh

@@ -41,7 +41,7 @@ syntax enable
 colorscheme molokai
 
 " Line numbers
-set number norelativenumber
+set number relativenumber
 
 " indentation all
 set smartindent

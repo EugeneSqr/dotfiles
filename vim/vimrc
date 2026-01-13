@@ -91,6 +91,8 @@ let xml_syntax_folding=1
 
 " open previous buffer
 nnoremap <silent><leader><leader> :bp<CR>
+" keep undo history in memory when switching buffers
+set hidden
 
 " fzf.vim
 let g:fzf_vim = {}

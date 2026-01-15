@@ -5,6 +5,12 @@ set -o vi
 # private aliases and variables
 source ~/Documents/private/configs/bashrc
 
+# the default value for both HISTSIZE and HISTFILESIZE is 500
+# when the number of input commands exceeds this value, bash_history.tmp files get created
+# slightly increse the limit to reduce the number of such tmp files
+HISTSIZE=1000
+HISTFILESIZE=1000
+
 # make sure executables can be run from $HOME/.local/bin
 PATH=${PATH}:${HOME}/.local/bin
 

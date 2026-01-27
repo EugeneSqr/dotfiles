@@ -210,3 +210,11 @@ let g:lsp_settings_enable_suggestions = 0
 
 " asynccomplete
 let g:asyncomplete_auto_popup = 0
+
+" debugging with termdebug
+let g:termdebug_config = {}
+" larger code window with vertical split
+let g:termdebug_config['wide'] = 163
+" show local variables window (toggle with :Var)
+let g:termdebug_config['variables_window'] = v:true
+let g:termdebug_config['variables_window_height'] = 15

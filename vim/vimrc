@@ -24,7 +24,6 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'mattn/vim-lsp-settings'
 Plug 'yssl/QFEnter'
-Plug 'kshenoy/vim-signature'
 call plug#end()
 
 let mapleader=","

@@ -60,11 +60,9 @@ lt() {
           ;;
       esac
     done
-    # If directory is empty or undefined, the whole ${directory:+"$directory"} thing
-    # evaluates to the empty string, and since it's not double-quoted,
-    # word splitting removes it entirely. On the other hand, if directory is nonblank,
-    # it gets effectively replaced by "$directory".
-    fd "$ignore" --type f --type l --hidden --exclude .git . ${directory:+"$directory"} | \
+    # use --base-directory instead of [path] postitional argument to apply the directory provided
+    # not only to search, but also to the output lines.
+    fd "$ignore" --type f --type l --hidden --exclude .git . --base-directory ${directory:-.} | \
         tree --fromfile --dirsfirst -C -a | more
 }
 # look around in an unfamilar directory with combination of fd, fzf and tree

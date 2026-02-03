@@ -92,12 +92,32 @@ nnoremap <silent><leader><leader> :bp<CR>
 " keep undo history in memory when switching buffers
 set hidden
 
+" vim-localvimrc and vim-rooter
+let g:localvimrc_name = ['.vimproject']
+let g:localvimrc_ask= 0
+let g:localvimrc_sandbox = 0
+let g:rooter_patterns = ['.vimproject']
+let g:rooter_buftypes = [''] " trigger rooter only for normal files
+autocmd BufRead,BufNewFile .vimproject set filetype=vim
+function! GetNearestVimProjectDir(max_depth=5)
+    let current_dir = getcwd()
+    for i in range(1, a:max_depth)
+      if ! empty(glob(expand(current_dir . "/.vimproject")))
+        return current_dir
+      else
+        let current_dir = fnamemodify(current_dir, ":h")
+      endif
+    endfor
+    return ""
+endfunction
+
 " fzf.vim
 let g:fzf_vim = {}
 " list files in CWD
 nnoremap <leader>k :Files!<CR>
-" list files in the current buffer's directory
-nnoremap <leader>K :Files! %:h<CR>
+" list files in the nearest directory with .vimproject
+" useful for getting out from deeply nested rooted directory
+nnoremap <leader>K :exe 'Files!' . GetNearestVimProjectDir()<CR>
 " list previously opened files (buffers)
 nnoremap <leader>p :Buffers<CR>
 " the --layout is set to 'reverse-list' for all fzf commands in bashrc
@@ -106,21 +126,15 @@ nnoremap <leader>p :Buffers<CR>
 " option back to 'default' for this particular command
 let g:fzf_vim.buffers_options = ['--layout', 'default' ]
 " text search
-function! TextSearchCWD()
-    " search text in CWD files (recursive)
-    execute "Rg! ".input("rg (cwd): ")
-endfunction
-function! TextSearchLocal()
-    " serch text in the current buffer's directory files (recursive)
+function! SearchText(search_dir)
     let cwd = getcwd()
-    let search_dir = expand("%:p:h")
-    let search_pattern = input("rg (local): ")
-    execute "lcd ".search_dir
-    execute "Rg! ".search_pattern
-    execute "lcd ".cwd
+    let search_pattern = input("rg (" . a:search_dir . "): ")
+    execute "lcd " . a:search_dir
+    execute "Rg! " . search_pattern
+    execute "lcd " . cwd
 endfunction
-nnoremap <leader>f :call TextSearchCWD()<CR>
-nnoremap <leader>F :call TextSearchLocal()<CR>
+nnoremap <leader>f :call SearchText(getcwd())<CR>
+nnoremap <leader>F :call SearchText(GetNearestVimProjectDir())<CR>
 
 " fzf horizontal preview window for side-by-side diffs
 nnoremap <leader>d :call fzf#vim#gitfiles(
@@ -145,14 +159,6 @@ augroup custom_fugitive_mappings
     " map 'S' to stage all in git status window
     au User FugitiveIndex nnoremap <buffer> S :Git add .<cr>
 augroup END
-
-" vim-localvimrc and vim-rooter
-let g:localvimrc_name = ['.vimproject']
-let g:localvimrc_ask= 0
-let g:localvimrc_sandbox = 0
-let g:rooter_patterns = ['.vimproject']
-let g:rooter_buftypes = [''] " trigger rooter only for normal files
-autocmd BufRead,BufNewFile .vimproject set filetype=vim
 
 " Airline
 " displaying mode in command line is redundant with airline

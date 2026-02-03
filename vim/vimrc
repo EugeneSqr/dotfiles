@@ -151,7 +151,8 @@ let g:localvimrc_name = ['.vimproject']
 let g:localvimrc_ask= 0
 let g:localvimrc_sandbox = 0
 let g:rooter_patterns = ['.vimproject']
-autocmd BufRead,BufNewFile .vimproject set syntax=vim
+let g:rooter_buftypes = [''] " trigger rooter only for normal files
+autocmd BufRead,BufNewFile .vimproject set filetype=vim
 
 " Airline
 " displaying mode in command line is redundant with airline

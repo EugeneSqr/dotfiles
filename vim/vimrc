@@ -1,7 +1,6 @@
 set nocompatible              " be iMproved
 " Plug
 call plug#begin()
-Plug 'VundleVim/Vundle.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-scripts/bats.vim'
 Plug 'vim-airline/vim-airline'
@@ -24,7 +23,6 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'mattn/vim-lsp-settings'
-Plug 'yssl/QFEnter'
 call plug#end()
 
 let mapleader=","

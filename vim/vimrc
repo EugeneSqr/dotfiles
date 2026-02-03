@@ -170,10 +170,6 @@ let g:airline#extensions#branch#enabled = 0
 " LSP errors are too distracting
 let g:airline#extensions#lsp#enabled = 0
 
-" vim-arg-wrap
-nnoremap <leader>j :WrapArgs<cr>
-nnoremap <leader>J :WrapArgsBack<cr>
-
 " vimwiki
 let g:vimwiki_global_ext = 0
 let g:vimwiki_dir_link = 'index'

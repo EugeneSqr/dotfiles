@@ -122,13 +122,6 @@ endfunction
 nnoremap <leader>f :call TextSearchCWD()<CR>
 nnoremap <leader>F :call TextSearchLocal()<CR>
 
-" Position the (global) quickfix window at the very bottom of the window
-" (useful for making sure that it appears underneath splits)
-"
-" NOTE: Using a check here to make sure that window-specific location-lists
-" aren't effected, as they use the same `FileType` as quickfix-lists.
-autocmd FileType qf if (getwininfo(win_getid())[0].loclist != 1) | wincmd J | endif
-
 " fzf horizontal preview window for side-by-side diffs
 nnoremap <leader>d :call fzf#vim#gitfiles(
     \'?',

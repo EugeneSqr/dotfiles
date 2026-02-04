@@ -158,7 +158,7 @@ augroup custom_fugitive_mappings
     " delete custom_fugitive_mappings to avoid double runs
     au!
     " map 'S' to stage all in git status window
-    au User FugitiveIndex nnoremap <buffer> S :Git add .<cr>
+    au User FugitiveIndex nnoremap <buffer> S :Git add -- .<cr>
 augroup END
 
 " Airline

@@ -8,7 +8,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-rooter'
 Plug 'embear/vim-localvimrc'
 Plug 'vimwiki/vimwiki'
 Plug 'junegunn/fzf.vim'
@@ -92,33 +91,16 @@ nnoremap <silent><leader><leader> :bp<CR>
 " keep undo history in memory when switching buffers
 set hidden
 
-" vim-localvimrc and vim-rooter
+" vim-localvimrc
 let g:localvimrc_name = ['.vimproject']
 let g:localvimrc_ask= 0
 let g:localvimrc_sandbox = 0
-let g:rooter_patterns = ['.vimproject']
-let g:rooter_buftypes = [''] " trigger rooter only for normal files
 autocmd BufRead,BufNewFile .vimproject set filetype=vim
-function! GetNearestVimProjectDir(max_depth=5)
-    let current_dir = getcwd()
-    let nearest_vimproject_dir = current_dir
-    for i in range(1, a:max_depth)
-      if ! empty(glob(expand(nearest_vimproject_dir . "/.vimproject")))
-        return nearest_vimproject_dir
-      else
-        let nearest_vimproject_dir = fnamemodify(nearest_vimproject_dir, ":h")
-      endif
-    endfor
-    return current_dir
-endfunction
 
 " fzf.vim
 let g:fzf_vim = {}
-" list files in CWD
-nnoremap <leader>k :Files!<CR>
-" list files in the nearest directory with .vimproject
-" useful for getting out from deeply nested rooted directory
-nnoremap <leader>K :exe 'Files!' . GetNearestVimProjectDir()<CR>
+nnoremap <leader>k :exe 'Files!' . expand('%:p:h')<CR>
+nnoremap <leader>K :Files!<CR>
 " list previously opened files (buffers)
 nnoremap <leader>p :Buffers<CR>
 " the --layout is set to 'reverse-list' for all fzf commands in bashrc
@@ -134,8 +116,8 @@ function! SearchText(search_dir)
     execute "Rg! " . search_pattern
     execute "lcd " . cwd
 endfunction
-nnoremap <leader>f :call SearchText(getcwd())<CR>
-nnoremap <leader>F :call SearchText(GetNearestVimProjectDir())<CR>
+nnoremap <leader>f :call SearchText(expand('%:p:h'))<CR>
+nnoremap <leader>F :call SearchText(getcwd())<CR>
 
 " fzf horizontal preview window for side-by-side diffs
 nnoremap <leader>d :call fzf#vim#gitfiles(

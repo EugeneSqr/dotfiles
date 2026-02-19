@@ -2,7 +2,6 @@ set nocompatible              " be iMproved
 " Plug
 call plug#begin()
 Plug 'sheerun/vim-polyglot'
-Plug 'vim-scripts/bats.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tomtom/tcomment_vim'

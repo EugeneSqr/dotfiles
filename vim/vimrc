@@ -47,8 +47,6 @@ set shiftwidth=4
 set expandtab
 set smarttab
 
-" max line length indication according to PEP8
-set colorcolumn=100
 set cursorline
 
 " highlight bracket pairs

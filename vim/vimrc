@@ -66,6 +66,10 @@ autocmd TextChanged,InsertLeave * if &modifiable | update | endif
 autocmd FileType make setlocal noexpandtab
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 
+" quick fix
+" autoclose on <enter>
+autocmd FileType qf nnoremap <buffer> <CR> <CR>:cclose<CR>
+
 " search
 set incsearch
 set ignorecase

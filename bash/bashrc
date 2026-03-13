@@ -137,5 +137,8 @@ envup() {
 envdown() {
     deactivate
     # optional cleanup
-    [ "$1" == "-c" ] && rm -rf ".venv"
+    [ "$1" == "-c" ] && envclean
+}
+envclean() {
+    rm -rf ".venv" ".ruff_cache" ".mypy_cache" ".pytest_cache" "*.egg-info"
 }

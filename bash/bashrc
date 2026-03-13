@@ -128,3 +128,14 @@ export FZF_CTRL_T_OPTS="
 export FZF_ALT_C_OPTS="
     --preview 'tree --dirsfirst -C {}'"
 alias vi='vim -O `fzf --preview "bat --style=-numbers --color=always {}"`'
+
+# python venv
+envup() {
+    [ ! -d ".venv" ] && python -m venv ".venv"
+    source ".venv/bin/activate"
+}
+envdown() {
+    deactivate
+    # optional cleanup
+    [ "$1" == "-c" ] && rm -rf ".venv"
+}

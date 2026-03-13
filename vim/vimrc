@@ -16,6 +16,7 @@ Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
 Plug 'lyokha/vim-xkbswitch'
 Plug 'eugenesqr/molokai'
+Plug 'eugenesqr/vim-filetypes'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
@@ -166,7 +167,6 @@ let g:vimwiki_list = [{'path': '~/Documents/private/',
 
 " vim-test
 nnoremap <leader>t :w<CR> :TestNearest<CR>
-let test#python#pytest#options = '-svx'
 
 " vim-xkbswitch
 let g:XkbSwitchEnabled = 1

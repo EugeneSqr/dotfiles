@@ -195,3 +195,7 @@ let g:termdebug_config['wide'] = 163
 " show local variables window (toggle with :Var)
 let g:termdebug_config['variables_window'] = v:true
 let g:termdebug_config['variables_window_height'] = 15
+
+" closing things
+nnoremap zz ZZ
+nnoremap zb :bw!<CR>

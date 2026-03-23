@@ -197,5 +197,4 @@ let g:termdebug_config['variables_window'] = v:true
 let g:termdebug_config['variables_window_height'] = 15
 
 " closing things
-nnoremap zz ZZ
 nnoremap zb :bw!<CR>

@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 set -e
 
-if [ ! -f "$XDG_CONFIG_HOME/xfce4/terminal/terminalrc" ]; then
-    mkdir -p "$XDG_CONFIG_HOME/xfce4/terminal/"
-    ln -s "$dotfiles_dir/xfce4-terminal/terminalrc" "$XDG_CONFIG_HOME/xfce4/terminal/"
-fi
+mkdir -p "$XDG_CONFIG_HOME/xfce4/xfconf/xfce-perchannel-xml"
+ln -sf "$dotfiles_dir/xfce4-terminal/xfce4-terminal.xml" "$XDG_CONFIG_HOME/xfce4/xfconf/xfce-perchannel-xml/"

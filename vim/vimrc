@@ -99,6 +99,8 @@ autocmd BufRead,BufNewFile .vimproject set filetype=vim
 
 " fzf.vim
 let g:fzf_vim = {}
+" same background for fullscreen and not fullscreen windows
+let g:fzf_colors = {'bg': ['bg', 'Normal']}
 nnoremap <leader>k :exe 'Files!' . expand('%:p:h')<CR>
 nnoremap <leader>K :Files!<CR>
 " list previously opened files (buffers)

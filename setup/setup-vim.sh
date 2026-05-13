@@ -24,4 +24,4 @@ if [ ! -d ~/.vim/autoload ]; then
 fi
 
 # ultisnips snippets
-ln -sf $dotfiles_dir/vim/UltiSnips ~/.vim/UltiSnips
+ln -sf "$dotfiles_dir/vim/UltiSnips" "$HOME/.vim/"

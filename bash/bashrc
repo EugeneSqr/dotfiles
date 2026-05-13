@@ -3,7 +3,7 @@
 set -o vi
 
 # private aliases and variables
-source ~/Documents/private/configs/bashrc
+source ~/Documents/private/eugenesqr/configs/bashrc
 
 # the default value for both HISTSIZE and HISTFILESIZE is 500
 # when the number of input commands exceeds this value, bash_history.tmp files get created

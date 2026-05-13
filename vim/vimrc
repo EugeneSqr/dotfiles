@@ -16,7 +16,6 @@ Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
 Plug 'lyokha/vim-xkbswitch'
 Plug 'eugenesqr/molokai'
-Plug 'eugenesqr/vim-filetypes'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
@@ -40,6 +39,13 @@ colorscheme molokai
 
 " Line numbers
 set number relativenumber
+
+" wrapping for smaller screens and vertical splits
+set wrap
+set linebreak
+set breakat-=\.
+set breakindent
+set showbreak=>>
 
 " indentation all
 set smartindent

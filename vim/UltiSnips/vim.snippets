@@ -19,7 +19,7 @@ function LintFormatFix()
     echo "done"
 endfunction
 
-let test#python#pytest#options = '-svx'
+let test#python#pytest#options = '-svvx'
 
 nnoremap <leader>L :call LintFormatFix()<CR>
 nnoremap <leader>l :call Lint()<CR>

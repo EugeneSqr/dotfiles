@@ -140,16 +140,10 @@ function! ToggleGStatus()
         bd .git*//
     else
         G
-        normal! 6G
+        normal! 5G
     endif
 endfunction
 nnoremap <silent><leader>s :call ToggleGStatus()<CR>
-augroup custom_fugitive_mappings
-    " delete custom_fugitive_mappings to avoid double runs
-    au!
-    " map 'S' to stage all in git status window
-    au User FugitiveIndex nnoremap <buffer> S :Git add -- .<cr>
-augroup END
 
 " Airline
 " displaying mode in command line is redundant with airline

@@ -175,6 +175,7 @@ let g:vimwiki_list = [{'path': '~/Documents/private/',
 
 " vim-test
 nnoremap <leader>t :w<CR> :TestNearest<CR>
+nnoremap <leader>T :w<CR> :TestLast<CR>
 
 " vim-xkbswitch
 let g:XkbSwitchEnabled = 1

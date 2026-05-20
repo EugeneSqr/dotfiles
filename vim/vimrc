@@ -173,12 +173,13 @@ let g:vimwiki_dir_link = 'index'
 let g:vimwiki_list = [{'path': '~/Documents/private/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 
+" vim-xkbswitch
+let g:XkbSwitchEnabled = 1
+
 " vim-test
 nnoremap <leader>t :w<CR> :TestNearest<CR>
 nnoremap <leader>T :w<CR> :TestLast<CR>
-
-" vim-xkbswitch
-let g:XkbSwitchEnabled = 1
+nnoremap <leader>Gt :w<CR> :TestVisit<CR>
 
 " vim-lsp
 let g:lsp_use_native_client = 1

@@ -62,7 +62,7 @@ lt() {
     done
     # use --base-directory instead of [path] postitional argument to apply the directory provided
     # not only to search, but also to the output lines.
-    fd "$ignore" --type f --type l --hidden --exclude .git . --base-directory ${directory:-.} | \
+    fd "$ignore" --type d --type f --type l --hidden --exclude .git . --base-directory ${directory:-.} | \
         tree --fromfile --dirsfirst -C -a | more
 }
 # look around in an unfamilar directory with combination of fd, fzf and tree

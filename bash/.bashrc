@@ -65,16 +65,6 @@ lt() {
     fd "$ignore" --type d --type f --type l --hidden --exclude .git . --base-directory ${directory:-.} | \
         treefile | more
 }
-# look around in an unfamilar directory with combination of fd, fzf and tree
-# respects .gitignore similar to fd
-llf () {
-    ignore=${1:---ignore}
-    target=$( (echo '.'; fd "$ignore" --type d --hidden --exclude .git) | \
-        fzf --preview "fd \"$ignore\" --type f --type l --hidden --exclude .git . {} | treefile")
-    if [ -n "$target" ]; then
-        cd $target
-    fi
-}
 
 alias grep="grep --color"
 alias bat="bat -pp"

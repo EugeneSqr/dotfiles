@@ -39,7 +39,7 @@ if [ $? -eq 0 ]; then \
 fi)'$Reset$PS1
 
 # ALIASES
-# remember aliases they can't use parameters, consider using functions instead
+alias treefile="tree --fromfile --dirsfirst -C -a"
 ll() {
     ls -la --color --human-readable --group-directories-first "${1:-.}" | more
 }
@@ -63,14 +63,14 @@ lt() {
     # use --base-directory instead of [path] postitional argument to apply the directory provided
     # not only to search, but also to the output lines.
     fd "$ignore" --type d --type f --type l --hidden --exclude .git . --base-directory ${directory:-.} | \
-        tree --fromfile --dirsfirst -C -a | more
+        treefile | more
 }
 # look around in an unfamilar directory with combination of fd, fzf and tree
 # respects .gitignore similar to fd
 llf () {
     ignore=${1:---ignore}
     target=$( (echo '.'; fd "$ignore" --type d --hidden --exclude .git) | \
-        fzf --preview "fd \"$ignore\" --type f --type l --hidden --exclude .git . {} | tree --fromfile --dirsfirst -C -a")
+        fzf --preview "fd \"$ignore\" --type f --type l --hidden --exclude .git . {} | treefile")
     if [ -n "$target" ]; then
         cd $target
     fi
@@ -90,10 +90,22 @@ alias gm='git switch $(git_default_branch)'
 alias gp="git pull"
 alias gmgp="gm && gp"
 # diffs
-alias gd="git diff"
-alias gdP="git --no-pager diff" # -P == --no-pager, hence the P in the alias name
-alias gdm='git diff $(git_default_branch)...'
-alias gdPm='git --no-pager diff $(git_default_branch)...'
+git_diff() {
+    cmd="$1"
+    shift
+    if [ "$#" -eq 0 ]; then
+        $cmd
+    elif [ "$1" = "--name-only" ]; then
+        $cmd --name-only | treefile
+    fi
+}
+gd() {
+    git_diff "git diff" "$@"
+}
+gdm() {
+    git_diff "git diff $(git_default_branch)..." "$@"
+}
+complete -W "--name-only" gd gdm
 # prune remote and local branches
 gpr() {
     git fetch -p && \

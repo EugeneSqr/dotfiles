@@ -81,12 +81,19 @@ alias bat="bat -pp"
 
 alias gs="git status --short"
 alias gl="git log --oneline"
-alias gd="git diff"
 alias gb="git branch -v"
-# master or main
-alias gm='git switch $(git symbolic-ref refs/remotes/origin/HEAD | cut -d"/" -f4)'
+git_default_branch() {
+    # handle "master" or "main" depending on remote repo settings
+    git symbolic-ref refs/remotes/origin/HEAD | cut -d"/" -f4
+}
+alias gm='git switch $(git_default_branch)'
 alias gp="git pull"
 alias gmgp="gm && gp"
+# diffs
+alias gd="git diff"
+alias gdP="git --no-pager diff" # -P == --no-pager, hence the P in the alias name
+alias gdm='git diff $(git_default_branch)...'
+alias gdPm='git --no-pager diff $(git_default_branch)...'
 # prune remote and local branches
 gpr() {
     git fetch -p && \

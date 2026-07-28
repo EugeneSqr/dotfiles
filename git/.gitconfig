@@ -24,3 +24,5 @@
     side-by-side=true
 [interactive]
     diffFilter=delta --color-only
+[checkout]
+	guess = false  # autocomplete with local branches only

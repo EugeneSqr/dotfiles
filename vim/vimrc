@@ -200,8 +200,71 @@ let g:termdebug_config['wide'] = 163
 let g:termdebug_config['variables_window'] = v:true
 let g:termdebug_config['variables_window_height'] = 15
 
-" closing things
 " close current buffer
 nnoremap zb :bw!<CR>
 " close all buffers except the current one
 nnoremap zB :%bd\|e#\|bd#<CR>
+
+" linting and formatting
+function FormatPython()
+    let out = system("ruff format ".expand('%'))
+    if v:shell_error == 0
+        let out = system("ruff check --fix --output-format=concise ".expand('%'))
+    endif
+    return out
+endfunction
+
+function LintPython()
+    return system("mypy . && ruff check --output-format=concise")
+endfunction
+
+function FormatSh()
+    return system('docker run --rm -u "$(id -u):$(id -g)" -v "$PWD:/mnt" -w /mnt mvdan/shfmt -w "'.expand("%").'"')
+endfunction
+
+function LintSh()
+    return system('docker run --rm -v "$PWD:/mnt" koalaman/shellcheck:stable -f gcc "'.expand("%").'"')
+endfunction
+
+function FormatRust()
+    return system("cargo fmt")
+endfunction
+
+function LintRust()
+    return system("cargo check")
+endfunction
+
+function Format()
+    if &filetype == "python"
+        let out = FormatPython()
+    elseif &filetype == "sh"
+        let out = FormatSh()
+    elseif &filetype == "rust"
+        let out = FormatRust()
+    endif
+
+    if v:shell_error != 0
+        echo out
+    else
+        echo "done"
+    endif
+endfunction
+
+function Lint()
+    if &filetype == "python"
+        set efm=%f:%l:%c:\ %m  " ruff concise
+        set efm+=%f:%l:\ %m    " mypy
+        set efm+=%-G%.%#       " discard all unmatched
+        cgetexpr LintPython()
+    elseif &filetype == "sh"
+        cgetexpr LintSh()
+    elseif &filetype == "rust"
+        cgetexpr LintRust()
+    endif
+    echo "done"
+    cwindow
+    set efm&
+endfunction
+
+nnoremap <leader>l :call Lint()<CR>
+nnoremap <leader>L :call Format()<CR>

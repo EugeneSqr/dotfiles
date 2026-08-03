@@ -149,5 +149,5 @@ envdown() {
     [ "$1" == "-c" ] && envclean
 }
 envclean() {
-    rm -rf ".venv" ".ruff_cache" ".mypy_cache" ".pytest_cache" "*.egg-info"
+    rm -rf ".venv" ".ruff_cache" ".mypy_cache" ".pytest_cache" "__pycache__" "*.egg-info"
 }

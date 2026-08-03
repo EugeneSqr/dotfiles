@@ -15,7 +15,7 @@ Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
 Plug 'lyokha/vim-xkbswitch'
-Plug 'eugenesqr/molokai'
+Plug 'crusoexia/vim-monokai'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
@@ -35,7 +35,8 @@ set imsearch=-1
 
 " Appearance
 syntax enable
-colorscheme molokai
+colorscheme monokai
+set termguicolors
 
 " Line numbers
 set number relativenumber

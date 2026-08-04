@@ -207,6 +207,7 @@ nnoremap zb :bw!<CR>
 nnoremap zB :%bd\|e#\|bd#<CR>
 
 " linting and formatting
+set autoread
 function FormatPython()
     let out = system("ruff format ".expand('%'))
     if v:shell_error == 0
@@ -249,6 +250,7 @@ function Format()
     else
         echo "done"
     endif
+    checktime
 endfunction
 
 function Lint()

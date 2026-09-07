@@ -106,6 +106,8 @@ autocmd BufRead,BufNewFile .vimproject set filetype=vim
 
 " fzf.vim
 let g:fzf_vim = {}
+" the footer is useless most of the time, consumes screen space
+let g:fzf_vim.options = '--no-footer'
 " same background for fullscreen and not fullscreen windows
 let g:fzf_colors = {'bg': ['bg', 'Normal']}
 nnoremap <leader>k :exe 'Files!' . expand('%:p:h')<CR>

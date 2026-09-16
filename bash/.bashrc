@@ -21,8 +21,11 @@ fi
 # input and default editor
 EDITOR=vim
 
-# colorize the "less" pager (do not treat ANSI escape codes as text)
-export LESS="-R"
+# 
+# -F: Tells less to automatically exit if the entire content fits on a single screen
+# -X: short output stays on top
+# -R: colorize the "less" pager by not treating ANSI escape codes as text
+export LESS="-FXR"
 
 source $dotfiles_dir/bash/grc.bashrc    # colorize some common commands
 # colorize git command line

@@ -12,8 +12,6 @@ Plug 'vimwiki/vimwiki'
 Plug 'junegunn/fzf.vim'
 Plug 'vim-test/vim-test'
 Plug 'SirVer/ultisnips'
-Plug 'tpope/vim-obsession'
-Plug 'dhruvasagar/vim-prosession'
 Plug 'lyokha/vim-xkbswitch'
 Plug 'crusoexia/vim-monokai'
 Plug 'prabirshrestha/async.vim'
@@ -110,8 +108,8 @@ let g:fzf_vim = {}
 let g:fzf_vim.options = '--no-footer'
 " same background for fullscreen and not fullscreen windows
 let g:fzf_colors = {'bg': ['bg', 'Normal']}
-nnoremap <leader>k :exe 'Files!' . expand('%:p:h')<CR>
-nnoremap <leader>K :Files!<CR>
+nnoremap <leader>K :exe 'Files!' . expand('%:p:h')<CR>
+nnoremap <leader>k :Files!<CR>
 " list previously opened files (buffers)
 nnoremap <leader>p :Buffers<CR>
 " the --layout is set to 'reverse-list' for all fzf commands in bashrc
@@ -127,8 +125,8 @@ function! SearchText(search_dir)
     execute "Rg! " . search_pattern
     execute "lcd " . cwd
 endfunction
-nnoremap <leader>f :call SearchText(expand('%:p:h'))<CR>
-nnoremap <leader>F :call SearchText(getcwd())<CR>
+nnoremap <leader>F :call SearchText(expand('%:p:h'))<CR>
+nnoremap <leader>f :call SearchText(getcwd())<CR>
 
 " fzf horizontal preview window for side-by-side diffs
 nnoremap <leader>d :call fzf#vim#gitfiles(

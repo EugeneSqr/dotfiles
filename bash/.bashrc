@@ -21,6 +21,9 @@ fi
 # input and default editor
 EDITOR=vim
 
+# colorize the "less" pager (do not treat ANSI escape codes as text)
+export LESS="-R"
+
 source $dotfiles_dir/bash/grc.bashrc    # colorize some common commands
 # colorize git command line
 source $dotfiles_dir/bash/git-prompt.sh
@@ -41,7 +44,7 @@ fi)'$Reset$PS1
 # ALIASES
 alias treefile="tree --fromfile --dirsfirst -C -a"
 ll() {
-    ls -la --color --human-readable --group-directories-first "${1:-.}" | more
+    ls -la --color --human-readable --group-directories-first "${1:-.}" | less
 }
 lt() {
     # use fd to respect .gitignore
@@ -63,7 +66,7 @@ lt() {
     # use --base-directory instead of [path] postitional argument to apply the directory provided
     # not only to search, but also to the output lines.
     fd "$ignore" --type d --type f --type l --hidden --exclude .git . --base-directory ${directory:-.} | \
-        treefile | more
+        treefile | less
 }
 
 alias grep="grep --color"

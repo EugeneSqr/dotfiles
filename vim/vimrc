@@ -226,7 +226,7 @@ function FormatSh()
 endfunction
 
 function LintSh()
-    return system('docker run --rm -v "$PWD:/mnt" koalaman/shellcheck:stable -f gcc "'.expand("%").'"')
+    return system('docker run --rm -v "$PWD:/mnt" koalaman/shellcheck:stable --external-sources --format=gcc "'.expand("%").'"')
 endfunction
 
 function FormatRust()

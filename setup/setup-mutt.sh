@@ -6,7 +6,7 @@ function setup_account() {
     touch "$mutt_dir"/$2/certificates
     local account_dir=$mutt_dir/$2
     local account_muttrc=$account_dir/muttrc
-    cp "$dotfiles_dir/setup/$1.muttrc" "$account_muttrc"
+    cp "$DOTFILES/setup/$1.muttrc" "$account_muttrc"
     read -p "Username: " account_username
     sed -i "s/<username>/$account_username/g" "$account_muttrc"
     read -p "Host: " account_host
@@ -37,9 +37,9 @@ if [ $should_setup_mutt = y ]; then
 
     muttrc=$mutt_dir/muttrc
     touch "$muttrc"
-    append_line $muttrc "source $dotfiles_dir/mutt/muttrc"
-    append_line $muttrc "source $dotfiles_dir/mutt/colorscheme.muttrc"
-    append_line $muttrc "set mailcap_path = $dotfiles_dir/mutt/mailcap"
+    append_line $muttrc "source $DOTFILES/mutt/muttrc"
+    append_line $muttrc "source $DOTFILES/mutt/colorscheme.muttrc"
+    append_line $muttrc "set mailcap_path = $DOTFILES/mutt/mailcap"
     # default config
     append_line $muttrc "source $mutt_dir/${local_folder_names[0]}/muttrc"
     # switching accounts

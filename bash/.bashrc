@@ -27,9 +27,9 @@ EDITOR=vim
 # -R: colorize the "less" pager by not treating ANSI escape codes as text
 export LESS="-FXR"
 
-source $dotfiles_dir/bash/grc.bashrc    # colorize some common commands
+source "$DOTFILES/bash/grc.bashrc"    # colorize some common commands
 # colorize git command line
-source $dotfiles_dir/bash/git-prompt.sh
+source "$DOTFILES/bash/git-prompt.sh"
 Red="\[\033[1;31m\]"
 Green="\[\033[1;32m\]"
 Reset="\[$(tput sgr0)\]"
@@ -45,6 +45,9 @@ if [ $? -eq 0 ]; then \
 fi)'$Reset$PS1
 
 # ALIASES
+dot() {
+    cd "$DOTFILES"
+}
 alias treefile="tree --fromfile --dirsfirst -C -a"
 ll() {
     ls -la --color --human-readable --group-directories-first "${1:-.}" | less

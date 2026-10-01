@@ -2,5 +2,5 @@
 set -e
 
 if [ ! -f "$HOME/.inputrc" ]; then
-    ln -s "$dotfiles_dir/readline/.inputrc" "$HOME/"
+    ln -s "$DOTFILES/readline/.inputrc" "$HOME/"
 fi

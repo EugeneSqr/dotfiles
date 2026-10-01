@@ -3,7 +3,7 @@
 set -o vi
 
 # private aliases and variables
-source ~/Documents/private/eugenesqr/configs/bashrc
+source "$DOCS_PRIVATE/eugenesqr/configs/bashrc"
 
 # the default value for both HISTSIZE and HISTFILESIZE is 500
 # when the number of input commands exceeds this value, bash_history.tmp files get created
@@ -26,6 +26,7 @@ EDITOR=vim
 # -R: colorize the "less" pager by not treating ANSI escape codes as text
 export LESS="-FXR"
 
+source "$DOTFILES/bash/tunes.bashrc"
 source "$DOTFILES/bash/grc.bashrc"    # colorize some common commands
 # colorize git command line
 source "$DOTFILES/bash/git-prompt.sh"

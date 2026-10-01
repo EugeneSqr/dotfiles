@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 GRC="$(which grc)"
 if [ "$TERM" != dumb ] && [ -n "$GRC" ]; then
     alias colourify="$GRC -es --colour=auto"
@@ -39,4 +41,3 @@ if [ "$TERM" != dumb ] && [ -n "$GRC" ]; then
     alias getsebool='colourify getsebool'
     alias ifconfig='colourify ifconfig'
 fi
-

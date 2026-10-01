@@ -21,7 +21,6 @@ fi
 # input and default editor
 EDITOR=vim
 
-# 
 # -F: Tells less to automatically exit if the entire content fits on a single screen
 # -X: short output stays on top
 # -R: colorize the "less" pager by not treating ANSI escape codes as text
@@ -45,9 +44,6 @@ if [ $? -eq 0 ]; then \
 fi)'$Reset$PS1
 
 # ALIASES
-dot() {
-    cd "$DOTFILES"
-}
 alias treefile="tree --fromfile --dirsfirst -C -a"
 ll() {
     ls -la --color --human-readable --group-directories-first "${1:-.}" | less
@@ -127,6 +123,9 @@ gr() {
     git rebase -i HEAD~"${1:-2}"
 }
 
+dot() {
+    cd "$DOTFILES"
+}
 alias dwn="cd $HOME/Downloads"
 alias src="cd $HOME/Documents/sources"
 

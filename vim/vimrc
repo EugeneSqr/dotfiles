@@ -165,7 +165,7 @@ let g:airline#extensions#lsp#enabled = 0
 " vimwiki
 let g:vimwiki_global_ext = 0
 let g:vimwiki_dir_link = 'index'
-let g:vimwiki_list = [{'path': '~/Documents/private/',
+let g:vimwiki_list = [{'path': $DOCS_PRIVATE,
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 
 " vim-xkbswitch

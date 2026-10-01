@@ -1,12 +1,9 @@
 #!/bin/bash
-# What to backup.
-yandex_disk="$HOME/Yandex.Disk"
-documents="$HOME/Documents/private"
+YANDEX_DISK="$HOME/Yandex.Disk"
 
-# Where to backup to.
-dest="$HOME/.backup"
-if [ ! -d $dest ]; then
-    mkdir $dest
+DESTINATION="$HOME/.backup"
+if [ ! -d "$DESTINATION" ]; then
+    mkdir "$DESTINATION"
 fi
 
 # Create archive filename.
@@ -15,17 +12,17 @@ hostname=$(cat /proc/sys/kernel/hostname)
 archive_file="$hostname-$day.tgz"
 
 # Print start status message.
-echo "Backing up $yandex_disk $documents to $dest/$archive_file"
+echo "Backing up $YANDEX_DISK $DOCS_PRIVATE to $DESTINATION/$archive_file"
 
 # Backup the files using tar.
-tar --exclude "$yandex_disk/.sync" \
-    --exclude "$yandex_disk/.private" \
-    -czf "$dest/$archive_file" "$yandex_disk" "$documents" && \
-    gpg -o "$dest/$archive_file.gpg" --symmetric "$dest/$archive_file" && \
-    rm "$dest/$archive_file"
+tar --exclude "$YANDEX_DISK/.sync" \
+    --exclude "$YANDEX_DISK/.private" \
+    -czf "$DESTINATION/$archive_file" "$YANDEX_DISK" "$DOCS_PRIVATE" && \
+    gpg -o "$DESTINATION/$archive_file.gpg" --symmetric "$DESTINATION/$archive_file" && \
+    rm "$DESTINATION/$archive_file"
 
 # Print end status message.
 echo "Backup finished"
 
-# Long listing of files in $dest to check file sizes.
-ls -lh $dest
+# Long listing of files in $DESTINATION to check file sizes.
+ls -lh "$DESTINATION"

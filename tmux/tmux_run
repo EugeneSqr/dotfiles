@@ -4,7 +4,7 @@ set -e
 cmd=${1-"start"}
 
 session_name=base
-wiki_path="${HOME}/Documents/private/index.md"
+wiki_path="$DOCS_PRIVATE/index.md"
 if [ "$cmd" = 'start' ]; then
     primary_window_name=code_1
     if ! tmux has-session -t "=$session_name" 2> /dev/null; then

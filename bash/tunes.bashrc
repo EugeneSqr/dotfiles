@@ -10,6 +10,7 @@ tuneup() {
 	local project_tunes
 	project_tunes=$(_get_project_tunes "$@") || return 1
 
+	echo "creating symlinks:" >&2
 	_backup_git_info_exclude "$project_tunes" "$repo_root" &&
 		_symlink_tunes "$project_tunes" "$repo_root"
 }
@@ -21,12 +22,13 @@ tunedown() {
 	local project_tunes
 	project_tunes=$(_get_project_tunes "$@") || return 1
 
+	echo "removing symlinks:" >&2
 	_rollback_tunes "$project_tunes" "$repo_root" &&
 		_restore_git_info_exclude "$project_tunes" "$repo_root"
 }
 
 _backup_git_info_exclude() {
-	if [[ ! -f "$1/.git/info/exclude" ]]; then
+	if [[ ! -f "$1/.git_info_exclude" ]]; then
 		# no need to backup
 		return 0
 	fi
@@ -37,10 +39,11 @@ _backup_git_info_exclude() {
 	fi
 
 	mv "$2/.git/info/exclude" "$2/.git/info/exclude.bak"
+    ln -s --verbose "$1/.git_info_exclude" "$2/.git/info/exclude"
 }
 
 _restore_git_info_exclude() {
-	if [[ ! -f "$1/.git/info/exclude" ]]; then
+	if [[ ! -f "$1/.git_info_exclude" ]]; then
 		# no need to restore
 		return 0
 	fi
@@ -65,15 +68,13 @@ _get_project_tunes() {
 }
 
 _symlink_tunes() {
-	echo "creating symlinks:" >&2
-	# match hidden files with *
+	# use extended globbing to exclude file in cp
 	shopt -s dotglob
-	cp --verbose --symbolic-link --recursive "$1/"* "$2"
+    cp --verbose --symbolic-link --recursive "$1/"!('.git_info_exclude') "$2"
 	shopt -u dotglob
 }
 
 _rollback_tunes() {
-	echo "removing symlinks:" >&2
 	# find all symlinks in $2 leading to $1 and delete them
 	find "$2" -type l -lname "$1/*" -print -delete
 }

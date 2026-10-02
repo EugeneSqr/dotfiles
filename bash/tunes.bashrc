@@ -70,7 +70,7 @@ _get_project_tunes() {
 _symlink_tunes() {
 	# use extended globbing to exclude file in cp
 	shopt -s dotglob
-    cp --verbose --symbolic-link --recursive "$1/"!('.git_info_exclude') "$2"
+    cp --verbose --symbolic-link --recursive "$1/"!(.git|.git_info_exclude) "$2"
 	shopt -u dotglob
 }
 

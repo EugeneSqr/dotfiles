@@ -133,6 +133,8 @@ alias src="cd $HOME/Documents/sources"
 alias tms="tmux_run start"
 alias tme="tmux_run end"
 
+alias susp="systemctl suspend"
+
 # fuzzy find
 eval "$(fzf --bash)"
 export FZF_DEFAULT_COMMAND="fd --type f --type l --hidden --follow --exclude .git"

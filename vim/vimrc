@@ -152,11 +152,6 @@ set noshowmode
 let g:airline_theme='molokai'
 let g:airline_powerline_fonts = 1
 let g:airline_detect_modified = 0
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-let g:airline_symbols.maxlinenr= ''
-let g:airline_symbols.colnr= ':'
 " branch name occupies too much space, disable it in favor of file names
 let g:airline#extensions#branch#enabled = 0
 " LSP errors are too distracting

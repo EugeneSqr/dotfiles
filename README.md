@@ -17,6 +17,7 @@ Install all of these using your OS's package manager
 * git-delta
 * fd
 * bat
+* lnav
 * ripgrep
 * ptpython (pipx install ptpython)
 * xkb-switch

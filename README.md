@@ -21,7 +21,6 @@ Install all of these using your OS's package manager
 * ripgrep
 * ptpython (pipx install ptpython)
 * xkb-switch
-* Yandex Disk
 
 ## Setting up the environment
 ```bash

@@ -1,5 +1,5 @@
 #!/bin/bash
-YANDEX_DISK="$HOME/Yandex.Disk"
+REMOTE_DISK="$HOME/remote"
 
 DESTINATION="$HOME/.backup"
 if [ ! -d "$DESTINATION" ]; then
@@ -12,12 +12,11 @@ hostname=$(cat /proc/sys/kernel/hostname)
 archive_file="$hostname-$day.tgz"
 
 # Print start status message.
-echo "Backing up $YANDEX_DISK $DOCS_PRIVATE to $DESTINATION/$archive_file"
+echo "Backing up $REMOTE_DISK $DOCS_PRIVATE to $DESTINATION/$archive_file"
 
 # Backup the files using tar.
-tar --exclude "$YANDEX_DISK/.sync" \
-    --exclude "$YANDEX_DISK/.private" \
-    -czf "$DESTINATION/$archive_file" "$YANDEX_DISK" "$DOCS_PRIVATE" && \
+tar --exclude "$REMOTE_DISK/.private" \
+    -czf "$DESTINATION/$archive_file" "$REMOTE_DISK" "$DOCS_PRIVATE" && \
     gpg -o "$DESTINATION/$archive_file.gpg" --symmetric "$DESTINATION/$archive_file" && \
     rm "$DESTINATION/$archive_file"
 
